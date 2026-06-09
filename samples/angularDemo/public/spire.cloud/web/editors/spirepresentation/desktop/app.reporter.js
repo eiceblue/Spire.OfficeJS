@@ -1,0 +1,9 @@
+/*
+ * Copyright (c) E-ICEBLUE 2026. All rights reserved
+ *
+ * https://cloud.e-iceblue.cn 
+ *
+ * Version: 11.5.7 (build:13)
+ */
+
+"use strict";var reqerr;require.config({baseUrl:"../../",paths:{jquery:"../externs/jquery/jquery.min",underscore:"../externs/underscore/underscore-min",xregexp:"../externs/xregexp/xregexp-all-min",sockjs:"../externs/sockjs/sockjs.min",allfonts:"../service/spirecommon/SupFonts",sdk:"../service/spirepowerpoint/api-all-min"},shim:{underscore:{exports:"_"},sdk:{deps:["jquery","underscore","allfonts","xregexp","sockjs"]}}}),require(["sdk"],function(){function e(e){var r,i=e.data;try{r=window.JSON.parse(i)}catch(e){}r&&"file:open"==r.type&&function(e){var r={};e&&((r=new Spire.spire_CDocInfo).put_Id(e.fileInfo.primary+(new Date).getTime()),r.put_Url(e.sourceUrl),r.put_Title(e.fileInfo.name),r.put_Format(e.fileInfo.ext),r.put_VKey(e.vkey),r.put_Options(e.options),r.put_Token(e.token),r.put_Permissions(e.permissions||{}),n(e.title));o.preloadReporter(e),o.SetThemesPath("../../../service/spirepowerpoint/themes/"),o.spire_setDocInfo(r),o.spire_getEditorPermissions(),o.spire_setViewMode(!0)}(r.data)}window.attachEvent?window.attachEvent("onmessage",e):window.addEventListener("message",e,!1);var o=new Spire.spire_docs_api({"id-view":"editor_sdk",using:"reporter"}),n=function(e){e&&(window.document.title+=" - "+e)};o.spire_registerCallback("spire_onDocumentContentReady",function(){o.SetDrawingFreeze(!1),$("#loading-mask").hide().remove()}),o.spire_registerCallback("spire_onGetEditorPermissions",function(e){o.spire_LoadDocument()}),setTimeout(function(){o.sendFromReporter("i:am:ready")},500)},function(e){"timeout"==e.requireType&&!reqerr&&window.requireTimeourError&&(reqerr=window.requireTimeourError(),window.alert(reqerr),window.location.reload())});

@@ -1,0 +1,12 @@
+<main class="upload-main">
+  <div class="upload-container">
+    <h2>Upload Your File</h2>
+    <div class="drop-area" id="dropArea">
+      <p>Drag and drop your file to the browser</p>
+      <p>or</p>
+      <button id="browseBtn" #browseBtn (click)="handleButtonClick($event)">Click to select your file</button>
+      <input type="file" id="fileInput" #fileInput (change)="handleDrop($event)">
+    </div>
+  </div>
+</main>
+

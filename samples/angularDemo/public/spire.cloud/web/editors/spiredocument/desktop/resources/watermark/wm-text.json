@@ -1,0 +1,9 @@
+{
+  "en": ["ASAP", "CONFIDENTIAL", "COPY", "DO NOT COPY", "DRAFT", "ORIGINAL", "PERSONAL", "SAMPLE", "TOP SECRET", "URGENT" ],
+  "ru": ["ДЛЯ СЛУЖЕБНОГО ПОЛЬЗОВАНИЯ", "ДСП", "КОПИРОВАТЬ НЕ РАЗРЕШАЕТСЯ", "КОПИЯ", "ЛИЧНОЕ", "ОБРАЗЕЦ", "ОРИГИНАЛ", "СЕКРЕТНО", "СОВ. СЕКРЕТНО", "СОВЕРШЕННО СЕКРЕТНО", "СРОЧНО", "ЧЕРНОВИК"],
+  "de": ["BEISPIEL", "DRINGEND", "ENTWURF", "KOPIE", "NICHT KOPIEREN", "ORIGINAL", "PERSÖNLICH", "STRENG VERTRAULICH", "VERTRAULICH"],
+  "es": ["BORRADOR", "CONFIDENCIAL", "COPIA", "EJEMPLO", "NO COPIAR", "ORIGINAL", "PERSONAL", "PRIORITARIO", "ULTRASECRETO", "URGENTE"],
+  "zh-CN": ["保密","部门绝密","传阅","公司绝密","紧急","禁止复制","禁止拷贝","请勿拷贝","请勿复制","请勿带出","样本","样例","原本","原件"],
+  "fr": ["BROUILLON", "CONFID", "COPIE", "DOCUMENT INTERNE", "EXEMPLE", "HAUTEMENT CONFIDENTIEL", "IMPORTANT", "NE PAS DIFFUSER", "NE PAS DISTRIB", "NE PAS DUPLIQUER", "ORIG", "PERSONNEL", "SPECIMEN", "TRES URGENT", "URGENT"],
+  "ja": ["機密保持","部外秘","回覧","社外秘","至急","複写禁止","コピー禁止","コピーご遠慮ください","複製ご遠慮ください","室外持ち出し禁止","見本","サンプル","原本","正本"]
+}

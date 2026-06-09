@@ -1,0 +1,2449 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spire.Office Documents</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=IE8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="resources/img/component/favicon.ico" type="image/x-icon">
+
+    <!-- splash -->
+
+    <style type="text/css">
+        .loadmask {
+            left: 0;
+            top: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            border: none;
+            background-color: #f4f4f4;
+            z-index: 101;
+        }
+
+        .loader-page {
+            width: 100%;
+            height: 170px;
+            bottom: 42%;
+            position: absolute;
+            text-align: center;
+            line-height: 10px;
+        }
+
+        .loader-logo {
+            max-height: 160px;
+            margin-bottom: 10px;
+        }
+
+        .loader-page-romb {
+            width: 40px;
+            display: inline-block;
+        }
+
+        .loader-page-text {
+            width: 100%;
+            bottom: 42%;
+            position: absolute;
+            text-align: center;
+            color: #888;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 20px;
+        }
+
+        .loader-page-text-loading {
+            font-size: 14px;
+        }
+
+        .loader-page-text-customer {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .romb {
+            width: 40px;
+            height: 40px;
+            -webkit-transform: rotate(135deg) skew(20deg, 20deg);
+            -moz-transform: rotate(135deg) skew(20deg, 20deg);
+            -ms-transform: rotate(135deg) skew(20deg, 20deg);
+            -o-transform: rotate(135deg) skew(20deg, 20deg);
+            position: absolute;
+            background: red;
+            border-radius: 6px;
+            -webkit-animation: movedown 3s infinite ease;
+            -moz-animation: movedown 3s infinite ease;
+            -ms-animation: movedown 3s infinite ease;
+            -o-animation: movedown 3s infinite ease;
+            animation: movedown 3s infinite ease;
+        }
+
+        #blue {
+            z-index: 3;
+            background: #55bce6;
+            -webkit-animation-name: blue;
+            -moz-animation-name: blue;
+            -ms-animation-name: blue;
+            -o-animation-name: blue;
+            animation-name: blue;
+        }
+
+        #red {
+            z-index:1;
+            background: #de7a59;
+            -webkit-animation-name: red;
+            -moz-animation-name: red;
+            -ms-animation-name: red;
+            -o-animation-name: red;
+            animation-name: red;
+        }
+
+        #green {
+            z-index: 2;
+            background: #a1cb5c;
+            -webkit-animation-name: green;
+            -moz-animation-name: green;
+            -ms-animation-name: green;
+            -o-animation-name: green;
+            animation-name: green;
+        }
+
+        @-webkit-keyframes red {
+              0%    { top:120px; background: #de7a59; }
+             10%    { top:120px; background: #F2CBBF; }
+             14%    { background: #f4f4f4; top:120px; }
+             15%    { background: #f4f4f4; top:0;}
+             20%    { background: #E6E4E4; }
+             30%    { background: #D2D2D2; }
+             40%    { top:120px; }
+            100%    { top:120px; background: #de7a59; }
+        }
+
+        @keyframes red {
+              0%    { top:120px; background: #de7a59; }
+             10%    { top:120px; background: #F2CBBF; }
+             14%    { background: #f4f4f4; top:120px; }
+             15%    { background: #f4f4f4; top:0; }
+             20%    { background: #E6E4E4; }
+             30%    { background: #D2D2D2; }
+             40%    { top:120px; }
+            100%    { top:120px; background: #de7a59; }
+        }
+
+        @-webkit-keyframes green {
+              0%    { top:110px; background: #a1cb5c; opacity:1; }
+             10%    { top:110px; background: #CBE0AC; opacity:1; }
+             14%    { background: #f4f4f4; top:110px; opacity:1; }
+             15%    { background: #f4f4f4; top:0; opacity:1; }
+             20%    { background: #f4f4f4; top:0; opacity:0; }
+             25%    { background: #EFEFEF; top:0; opacity:1; }
+             30%    { background:#E6E4E4; }
+             70%    { top:110px; }
+            100%    { top:110px; background: #a1cb5c; }
+        }
+
+        @keyframes green {
+              0%    { top:110px; background: #a1cb5c; opacity:1; }
+             10%    { top:110px; background: #CBE0AC; opacity:1; }
+             14%    { background: #f4f4f4; top:110px; opacity:1; }
+             15%    { background: #f4f4f4; top:0; opacity:1; }
+             20%    { background: #f4f4f4; top:0; opacity:0; }
+             25%    { background: #EFEFEF; top:0; opacity:1; }
+             30%    { background:#E6E4E4; }
+             70%    { top:110px; }
+            100%    { top:110px; background: #a1cb5c; }
+        }
+
+        @-webkit-keyframes blue {
+              0%    { top:100px; background: #55bce6; opacity:1; }
+             10%    { top:100px; background: #BFE8F8; opacity:1; }
+             14%    { background: #f4f4f4; top:100px; opacity:1; }
+             15%    { background: #f4f4f4; top:0; opacity:1; }
+             20%    { background: #f4f4f4; top:0; opacity:0; }
+             25%    { background: #f4f4f4; top:0; opacity:0; }
+             45%    { background: #EFEFEF; top:0; opacity:0,2; }
+            100%    { top:100px; background: #55bce6; }
+        }
+
+        @keyframes blue {
+              0%    { top:100px; background: #55bce6; opacity:1; }
+             10%    { top:100px; background: #BFE8F8; opacity:1; }
+             14%    { background: #f4f4f4; top:100px; opacity:1; }
+             15%    { background: #f4f4f4; top:0; opacity:1; }
+             20%    { background: #f4f4f4; top:0; opacity:0; }
+             25%    { background: #f4f4f4; top:0; opacity:0; }
+             45%    { background: #EFEFEF; top:0; opacity:0,2; }
+            100%    { top:100px; background: #55bce6; }
+        }
+    </style>
+
+    <script>
+        var userAgent = navigator.userAgent.toLowerCase(),
+            check = function(regex){ return regex.test(userAgent); },
+            stopLoading = false;
+        if (!check(/opera/) && (check(/msie/) || check(/trident/))) {
+            var m = /msie (\d+\.\d+)/.exec(userAgent);
+            if (m && parseFloat(m[1]) < 9.0) {
+                document.write('<div class="app-error-panel">' +
+                                '<div class="message-block">' +
+                                    '<div class="message-inner">' +
+                                        '<div class="title">Your browser is not supported.</div>' +
+                                        '<div class="text">Sorry, Document Editor is currently only supported in the latest versions of the Chrome, Firefox, Safari or Internet Explorer web browsers.</div>' +
+                                    '</div>' +
+                                '</div></div>');
+                stopLoading = true;
+            }
+        }
+        function getType() {
+            return 'docx';
+        }
+        function getUrlParams() {
+            var e,
+                a = /\+/g,  // Regex for replacing addition symbol with a space
+                r = /([^&=]+)=?([^&]*)/g,
+                d = function (s) { return decodeURIComponent(s.replace(a, " ")); },
+                q = window.location.search.substring(1),
+                urlParams = {};
+
+            while (e = r.exec(q))
+                urlParams[d(e[1])] = d(e[2]);
+
+            return urlParams;
+        }
+
+        function encodeUrlParam(str) {
+            return str.replace(/&/g, '&amp;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;');
+        }
+
+        var params = getUrlParams(),
+            lang = (params["lang"] || 'en').split("-")[0],
+            customer = params["customer"] ? ('<div class="loader-page-text-customer">' + encodeUrlParam(params["customer"]) + '</div>') : '',
+            margin = (customer !== '') ? 50 : 20,
+            loading = 'Loading...',
+            logo = params["logo"] ? ((params["logo"] !== 'none') ? ('<img src="' + encodeUrlParam(params["logo"]) + '" class="loader-logo" />') : '') : null;
+
+        window.frameEditorId = params["frameEditorId"];
+
+        if ( lang == 'de')      loading = 'Ladevorgang...';
+        else if ( lang == 'es') loading = 'Cargando...';
+        else if ( lang == 'fr') loading = 'Chargement en cours...';
+        else if ( lang == 'it') loading = 'Caricamento in corso...';
+        else if ( lang == 'pt') loading = 'Carregando...';
+        else if ( lang == 'ru') loading = 'Загрузка...';
+        else if ( lang == 'sl') loading = 'Nalaganje...';
+        else if ( lang == 'tr') loading = 'Yükleniyor...';
+
+        if ( !stopLoading )
+            document.write(
+                '<div id="loading-mask" class="loadmask">' +
+                    '<div class="loader-page" style="margin-bottom: ' + margin + 'px;' + ((logo!==null) ? 'height: auto;' : '') + '">' +
+                        ((logo!==null) ? logo : '</div>') +
+                    '</div>' +
+                    '<div class="loader-page-text">' +  customer +
+                        '<div class="loader-page-text-loading">' + loading + '</div>' +
+                    '</div>' +
+                '</div>');
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="../../../editors/spiredocument/desktop/resources/css/app.css">
+</head>
+<body>
+    <script type="text/javascript" src="../../../externs/localforage/localforage.js" anysc></script>
+    <script>
+        window.requireTimeourError = function(){
+            var reqerr;
+            if (lang == 'zh') reqerr = '连接速度太慢，无法加载某些组件。 请重新加载页面。';
+            else if (lang == 'es') reqerr = 'La conexión es muy lenta, algunos de los componentes no han podido cargar. Por favor recargue la página.';
+            else if (lang == 'fr') reqerr = 'La connexion est trop lente, certains des composants n\'ons pas pu être chargé. Veuillez recharger la page.';
+            else if (lang == 'ru') reqerr = 'Слишком медленное соединение, не удается загрузить некоторые компоненты. Пожалуйста, обновите страницу.';
+            else reqerr = 'The connection is too slow to load some components. Please reload the page.';
+            return reqerr;
+        };
+
+        var requireTimeoutID = setTimeout(function(){
+            window.alert(window.requireTimeourError());
+            window.location.reload();
+        }, 30000);
+
+        var require = {
+            waitSeconds: 30,
+            callback: function(){
+                clearTimeout(requireTimeoutID);
+            }
+        };
+    </script>
+
+
+<div id="viewport" class="">
+    <div class="layout-region">
+        <div id="viewport-vbox-layout" class="layout-ct vbox">
+                <div class="layout-item" id="header" style="top: 0px;"></div>
+                <div class="layout-item" id="ai-header" style="top: 0px;display: none;background-color: white;"></div>
+                <div class="layout-item" id="toolbar-control">
+                    <div id="viewport-hbox-layout1">
+                        <div id="left-menu" class="layout-item" style="position: absolute;">
+                            <div id="view-left-menu" class="tool-menu left">
+                                <div class="tool-menu-btns" style="padding-top: 0;">
+                                    <button id="left-btn-file" class="btn btn-category">文件</button>
+                                    <button id="left-btn-start" class="btn btn-category active">开始</button>
+                                    <button id="left-btn-insert" class="btn btn-category">插入</button>
+                                    <button id="left-btn-format" class="btn btn-category">页面布局</button>
+                                    <button id="left-btn-quote" class="btn btn-category">引用</button>
+                                    <button id="left-btn-coordination" class="btn btn-category">审阅</button>
+                                    <button id="left-btn-layout" class="btn btn-category">绘图工具</button>
+                                    <button id="left-btn-tabletool" class="btn btn-category disabled">表格工具</button>
+                                    <button id="left-btn-custome" class="btn btn-category"></button>
+                                    <span class="btn-placeholder" id="id-left-menu-custome-btn"></span>
+                                    <div class="toolbar-group no-mask" style="float:right; width:60px;height: 30px;" id="id-toolbar-full-placeholder-hidebars">
+                                        <div class="toolbar-row" style="float:left;margin-top: 3px;width: 100%;">
+                                            <span class="btn-placeholder" style="float:left;" id="id-toolbar-full-placeholder-btn-control">
+                                                <div class="btn-group" id="id-toolbar-btn-control">
+                                                    <button type="button" class="btn btn-toolbar">
+                                                        <span class="caption"></span>
+                                                        <span class="btn-icon btn-control no-mask">&nbsp;</span>
+                                                    </button>
+                                                </div>
+                                            </span>
+                                            <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-hidebars">
+                                                <div class="btn-group" id="id-toolbar-btn-hidebars">
+                                                    <button type="button" class="btn dropdown-toggle btn-toolbar" id="id-toolbar-btn-hidebars-active" data-toggle="dropdown">
+                                                        <span class="caption"></span>
+                                                        <span class="btn-icon btn-hidebars no-mask">&nbsp;</span>
+                                                        <span class="caret img-commonctrl"></span>
+                                                    </button>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="left-panel"></div>
+                            </div>
+                        </div>
+                        <div id="file-menu-panel" class="left-menu-full-ct"></div>
+                        <div id="id-product-change-box-bg" style="display:none;"></div>
+                        <div class="product-change-box" id="id-product-change-box" style="display:none">
+                            <div class="product-change-abox">
+                                <div class="product-change-a1"></div>
+                                <div class="product-change-a2"></div>
+                                <div id="product-change-panel" class="product-change-ct" style="display:none;">product change panel</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layout-item" id="toolbar">
+                 <div class="toolbar" id="tollbar-big-parent">
+                    <div id="id-toolbar-short">
+                        <div id="id-toolbar-short-undo">
+                            <div class="toolbar-group tempUndo">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder" id="id-toolbar-short-placeholder-btn-undo">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-undo-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-undo">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder" id="id-toolbar-short-placeholder-btn-redo">
+                                        <button type="button" class="btn btn-toolbar disabled"
+                                            id="id-toolbar-btn-redo-short" data-toggle="tooltip"
+                                            data-original-title="" title="" disabled="disabled">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-redo">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-layout-short">
+                            <div id="id-shape-settings-short" class="settings-panel tempShape">
+                                <div>
+                                    <span class="btn-placeholder" id="id-toolbar-btn-Rotate-short"></span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div id="id-textart-settings-short" class="settings-panel tempTextArt">
+                                <div>
+                                    <span class="btn-placeholder" id="id-toolbar-btn-textDirection-short"></span>
+                                    <span class="btn-placeholder" id="id-toolbar-btn-vertAlignText-short"></span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div id="id-chart-settings-short" class="settings-panel tempChartEditData">
+                                <button type="button" class="btn btn-text-default" id="chart-button-edit-data-short">编辑数据</button>
+                                <div class="separator short">
+                                </div>
+                            </div>
+                            <div id="id-header-settings-short" class="settings-panel tempHeaderFooter">
+                                <div class="tempHeaderFooterPosition">
+                                    <div id="headerfooter-spin-position-short" class="spinner"data-original-title="" title=""></div>
+                                    <div class="separator short"></div>
+                                </div>
+                                <div id="header-footer-tools-short" class="tempHeaderFooterOptions">
+                                    <div id="headerfooter-check-diff-first-short"></div>
+                                    <div id="headerfooter-check-diff-odd-short"></div>
+                                    <div id="headerfooter-check-same-as-short" style="float:left;"></div>
+                                    <div class="separator short"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-tableTool-short">
+                            <div class="tempTableCell">
+                                <label id="id-table-setting-toolbar-textHeight-short"
+                                    style="margin-top: 3px;display: block;float: left;width: 65px;">单元格--高</label>
+                                <div id="table-spin-cell-height-short"
+                                    style="display: block; float:left;margin-right: 23px;"></div>
+                                <label id="id-table-setting-toolbar-textWidth-short"
+                                    style="margin-top: 3px;display: block;float: left;width: 65px;">单元格--宽</label>
+                                <div id="table-spin-cell-width-short" style="display: block; float:left;"></div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div class="tempTableformula">
+                                <span class="btn-placeholder"id="id-toolbar-placeholder-btn-add-formula-toolbar-short"></span>
+                                <div class="separator short"></div>
+                            </div>
+                           
+                        </div>
+                        <div id="id-toolbar-start-short">
+                            <div class="toolbar-group tempFont">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder" id="id-toolbar-short-placeholder-field-fontname">
+                                        <div class="input-group combobox fonts input-group-nr" data-toggle="tooltip"
+                                            data-original-title="" title="">
+                                            <input type="text" class="form-control" autocomplete="off"/>
+                                            <div style="display: table-cell;"></div>
+                                            <button type="button" class="btn btn-default dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder" id="id-toolbar-short-placeholder-field-fontsize">
+                                        <span class="input-group combobox input-group-nr" data-toggle="tooltip"
+                                            data-original-title="" title="">
+                                            <input type="text" class="form-control" autocomplete="off"/>
+                                            <button type="button" class="btn btn-default dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                            </button>
+                                        </span>
+                                    </span>
+                                    <span class="btn-placeholder" id="id-toolbar-short-placeholder-btn-incfont">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="id-toolbar-btn-incfont-short" data-toggle="tooltip"
+                                            data-original-title="" title="">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-incfont">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder" id="id-toolbar-short-placeholder-btn-decfont">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="id-toolbar-btn-decfont-short" data-toggle="tooltip"
+                                            data-original-title="" title="">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-decfont">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div class="toolbar-group tempFont">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split" id="id-toolbar-short-placeholder-btn-bold">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-bold-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-bold">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-italic">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="id-toolbar-btn-italic-short" data-toggle="tooltip"
+                                            data-original-title="" title="">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-italic">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-underline">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="id-toolbar-btn-underline-short" data-toggle="tooltip"
+                                            data-original-title="" title="">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-underline">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-highlight">
+                                        <div class="btn-group split" id="id-toolbar-btn-highlight-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-highlight">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-fontcolor">
+                                        <div class="btn-group split" id="id-toolbar-btn-fontcolor-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-fontcolor">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div class="toolbar-group tempParagraph">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-halign">
+                                        <div class="btn-group" id="id-toolbar-btn-halign" data-toggle="tooltip"
+                                            data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-align-center">&nbsp;</span>
+                                                <span class="caret img-commonctrl"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-markers">
+                                        <div class="btn-group split" id="id-toolbar-btn-markers-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-setmarkers">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-numbering">
+                                        <div class="btn-group split" id="id-toolbar-btn-numbering-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-numbering">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-multilevels">
+                                        <div class="btn-group" id="id-toolbar-btn-multilevels-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown" aria-expanded="false">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-multilevels">&nbsp;</span>
+                                                <span class="caret img-commonctrl"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div class="toolbar-group tempParagraph">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-decoffset">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="id-toolbar-btn-decoffset-short" data-toggle="tooltip"
+                                            data-original-title="" title="">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-decoffset">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-incoffset">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="id-toolbar-btn-incoffset-short" data-toggle="tooltip"
+                                            data-original-title="" title="">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-incoffset">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-linespace">
+                                        <div class="btn-group" id="id-toolbar-btn-linespace-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-linespace">&nbsp;</span>
+                                                <span class="caret img-commonctrl"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-hidenchars">
+                                        <div class="btn-group split" id="id-toolbar-btn-hidenchars-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-hidenchars">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div class="toolbar-group tempStyle" id="start-style-div-short">
+                                <div id="id-toolbar-short-placeholder-field-styles"></div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div class="toolbar-group tempEdit">
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-short-placeholder-btn-find-short">
+                                    <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-find-short"
+                                        data-toggle="tooltip" data-original-title="" title="">
+                                        <span class="caption"></span>
+                                        <span class="btn-icon btn-find">&nbsp;</span>
+                                    </button>
+                                </span>
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-short-placeholder-btn-replace-short">
+                                    <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-replace-short"
+                                        data-toggle="tooltip" data-original-title="" title="">
+                                        <span class="caption"></span>
+                                        <span class="btn-icon btn-replace">&nbsp;</span>
+                                    </button>
+                                </span>
+                                <div class="separator short"></div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-insert-short">
+                            <div class="toolbar-group tempInsertHeaderAndFooter" id="tempInsertHeaderAndFooter-HeaderAndFooter">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-short-placeholder-btn-insertHeaderAndFooter">
+                                        <div class="btn-group" id="id-toolbar-btn-editheader-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" style=""
+                                                data-toggle="dropdown">
+                                                <span class="caption">页眉和页脚</span>
+                                                <span class="btn-icon btn-editheader-short">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="toolbar-group tempInsertHeaderAndFooter" id="tempInsertHeaderAndFooter-Pagenum">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-short-placeholder-btn-insertPagenum">
+                                        <div class="btn-group" id="id-toolbar-btn-insertpagenum-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">页码</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                                <span class="btn-icon btn-insertpagenum-short">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="toolbar-group tempInsertBlankPage">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-short-placeholder-btn-insertPageBreak">
+                                        <div class="btn-group" id="id-toolbar-btn-pagebreak-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">分隔符</span>
+                                                <span class="btn-icon btn-pagebreak-short">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="toolbar-group tempInsertTable">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-short-placeholder-btn-insertTable">
+                                        <div class="btn-group" id="id-toolbar-btn-insertTable-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">表格</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                                <span class="btn-icon btn-insertTable-short">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="toolbar-group tempInsertChart">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-short-placeholder-btn-insertImage">
+                                        <div class="btn-group" id="id-toolbar-btn-insertimage-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">图片</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                                <span class="btn-icon btn-insertimage-short">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="toolbar-group tempInsertLink">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-short-placeholder-btn-insertHyperlink">
+                                        <div class="btn-group" id="id-toolbar-btn-inserthyperlink-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">链接</span>
+                                                <span class="btn-icon btn-inserthyperlink-short">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-format-short">
+                            <div class="toolbar-group tempPageSetting" id="tempPageSetting-pageorient">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-short-placeholder-btn-format-pageorient">
+                                        <div class="btn-group" id="id-toolbar-btn-pageorient-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">方向</span>
+                                                <span class="btn-icon btn-pageorient-short">&nbsp;</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="toolbar-group tempPageSetting">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-short-placeholder-btn-format-pagesize">
+                                        <div class="btn-group" id="id-toolbar-btn-pagesize-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">页面大小</span>
+                                                <span class="btn-icon btn-pagesize-short">&nbsp;</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="toolbar-group tempPageSetting" id="tempPageSetting-margins">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-short-placeholder-btn-format-pagemargins">
+                                        <div class="btn-group" id="id-toolbar-btn-pagemargin-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">页边距</span>
+                                                <span class="btn-icon btn-pagemargins-short">&nbsp;</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div class="toolbar-group tempParagraphSetting">
+                                <span class="btn-placeholder" id="id-toolbar-short-placeholder-btn-para-before">
+                                    <span class="btn-icon btn-spinner-before">&nbsp;</span>
+                                    <span id="id-toolbar-tempTextPre" class="btn-spinner-before-after">段前间距</span>
+                                    <span id="id-short-paragraph-spin-spacing-before"
+                                        class="spinner paragraph-spin-spacing">
+                                        <input type="text" class="form-control" autocomplete="off"/>
+                                        <div class="spinner-buttons">
+                                            <button type="button" class="spinner-up">
+                                                <i class="img-commonctrl"></i>
+                                            </button>
+                                            <button type="button" class="spinner-down">
+                                                <i class="img-commonctrl"></i>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="toolbar-group tempParagraphSetting">
+                                <span class="btn-placeholder" id="id-toolbar-short-placeholder-btn-para-after">
+                                    <span class="btn-icon btn-spinner-after" style="margin-top:11px;">&nbsp;</span>
+                                    <span id="id-toolbar-tempTextBack" class="btn-spinner-before-after">段后间距</span>
+                                    <span id="id-short-paragraph-spin-spacing-after"
+                                        class="spinner paragraph-spin-spacing">
+                                        <input type="text" class="form-control" autocomplete="off"/>
+                                        <div class="spinner-buttons">
+                                            <button type="button" class="spinner-up"><i
+                                                    class="img-commonctrl"></i></button>
+                                            <button type="button" class="spinner-down"><i
+                                                    class="img-commonctrl"></i></button>
+                                        </div>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-quote-short">
+                            <div class="toolbar-group">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder tempContents"
+                                        id="id-toolbar-full-placeholder-btn-slot-contents-short">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-contents-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">目 录</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder tempContents"
+                                        id="id-toolbar-full-placeholder-btn-slot-contents-update-short">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-contents-update-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">刷 新</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder tempFootnote"
+                                        id="id-toolbar-full-placeholder-btn-slot-notes-short">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-notes-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption" style="">脚 注</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder tempCaptionAndLink"
+                                        id="id-toolbar-short-placeholder-btn-slot-bookmarks">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-bookmarks-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">书签</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder tempCaptionAndLink"
+                                        id="id-toolbar-short-placeholder-btn-slot-caption">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-caption-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">题注</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-coordination-short">
+                            <div class="toolbar-group tempCoordination">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-coauthmode">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-coedit-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">协同编辑模式</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div class="toolbar-group tempComments">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-allcocomments">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-allcommonts-short"
+                                            data-toggle="tooltip">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar">
+                                                <span class="caption">插入批注</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-corecomments-drop">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-comment-drop-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">删除</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div class="toolbar-group tempTrack">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-review-on">
+                                        <div class="btn-group" id="id-toolbar-btn-trunon-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar">
+                                                <span class="caption">跟踪变化</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-review-view">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-review-view-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">显示模式</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-short-placeholder-btn-review-panel">
+                                        <div class="btn-group" id="id-toolbar-btn-review-panel-short"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar">
+                                                <span class="caption">审阅窗格</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                            <div class="toolbar-group tempChanges">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split"
+                                          id="id-toolbar-short-placeholder-btn-change-prev">
+                                        <div class="btn-group" id="id-toolbar-btn-review-prev-short"
+                                             data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                    data-toggle="dropdown">
+                                                <span class="caption">上一条</span>
+                                                <span class="btn-icon btn-review-prev-short">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                          id="id-toolbar-short-placeholder-btn-change-next">
+                                        <div class="btn-group" id="id-toolbar-btn-review-next-short"
+                                             data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                    data-toggle="dropdown">
+                                                <span class="caption">下一条</span>
+                                                <span class="btn-icon btn-review-next-short">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                          id="id-toolbar-short-placeholder-btn-change-accept-drop">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-accept-drop-short"
+                                             data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                    data-toggle="dropdown">
+                                                <span class="caption">接受</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                          id="id-toolbar-short-placeholder-btn-change-reject-drop">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-reject-drop-short"
+                                             data-toggle="tooltip" data-original-title="" title="">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                    data-toggle="dropdown">
+                                                <span class="caption">拒绝</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="separator short"></div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-custome-short" style="display: none; width: 100%; position: relative; left: 81px;"></div>
+                    </div>
+                    <div id="id-toolbar-full">
+                        <div id="id-toolbar-full-undo" class="fullUndo">
+                            <div class="toolbar-group no-mask tempUndo">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-undo">
+                                        <button class="btn btn-toolbar" id="id-toolbar-btn-undo"
+                                            data-toggle="tooltip">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-undo">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-redo">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-redo">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-redo">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div id="id-toolbar-tempTextUndo">撤销</div>
+                                <div class="separator long"></div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-layout-full" class="FullLayout">
+                            <div class="settings-panel toolbar-group tempShape" id="id-shape-settings-toolbar">
+                                <div class="btn-group" id="id-toolbar-btn-Rotate"></div>
+                                <label id="id-shape-setting-toolbar-strShape"
+                                    class="right-menu need_remove">形状</label>
+                                <div class="separator long" id="shape-textart-separator"></div>
+                            </div>
+                            <div class="settings-panel toolbar-group tempChart" id="id-chart-settings-toolbar">
+                                <div class="right-menu need_remove">
+                                    <div id="chart-combo-style-toolbar"></div>
+                                </div>
+                                <p id="id-toolbar-temp-chart" class="right-menu need_remove">图表</p>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="settings-panel toolbar-group tempTextArt active" id="id-textart-settings-toolbar">
+                                <div class="right-menu need_remove">
+                                    <div id="textart-combo-template-toolbar"></div>
+                                </div>
+                                <div class="btn-group" id="id-toolbar-btn-textDirection"></div>
+                                <div class="btn-group" id="id-toolbar-btn-vertAlignText"></div>
+                                <div id="textart-combo-transform-toolbar" class="right-menu need_remove"></div>
+                                <label id="id-shape-setting-toolbar-strTextArt"
+                                    class="right-menu need_remove">艺术字</label>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="settings-panel toolbar-group tempHeaderFooter" id="id-header-settings-toolbar">
+                                <div class="tempHeaderFooterPosition">
+                                    <label id="headerfooter-label-position-temp"
+                                        class="header right-menu need_remove">位置</label>
+                                    <label id="headerfooter-label-position-toolbar"
+                                        class="input-label right-menu need_remove">页眉顶端距离</label>
+                                    <div id="headerfooter-spin-position-toolbar"></div>
+                                    <div class="separator long"></div>
+                                </div>
+                                <div class="tempHeaderFooterOptions">
+                                    <label id="headerfooter-check-options"
+                                        class="header right-menu need_remove">选项</label>
+                                    <div id="headerfooter-check-diff-first-toolbar"></div>
+                                    <div id="headerfooter-check-diff-odd-toolbar"></div>
+                                    <div id="headerfooter-check-same-as-toolbar"></div>
+                                    <div class="separator long"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-tableTool-full" class="FullTable">
+                            <div id="id-table-settings-toolbar">
+                                <div class="toolbar-group tempTableCheckbox">
+                                    <div id="id-toolbar-table-row">
+                                        <span>
+                                            <div id="table-checkbox-header-toolbar"></div>
+                                        </span>
+                                        <span>
+                                            <div id="table-checkbox-total-toolbar"></div>
+                                        </span>
+                                        <span>
+                                            <div id="table-checkbox-banded-toolbar"></div>
+                                        </span>
+                                        
+                                    </div>
+                                    <div id="id-toolbar-table-column">
+                                        <span>
+                                            <div id="table-checkbox-first-toolbar"></div>
+                                        </span>
+                                        <span>
+                                            <div id="table-checkbox-last-toolbar"></div>
+                                        </span>
+                                        <span>
+                                            <div id="table-checkbox-col-banded-toolbar"></div>
+                                        </span>
+                                    </div>
+                                    <div class="separator long"></div>
+                                </div>
+                                <div class="toolbar-group tempTableCombo">
+                                    <div id="table-combo-template-toolbar"></div>
+                                    <div class="separator long"></div>
+                                </div>
+                                <div class="toolbar-group tempTableTextWrap right-menu need_remove">
+                                    <div id="table-button-wrap-none-toolbar"></div>
+                                    <div id="table-button-wrap-parallel-toolbar"></div>
+                                    <p id="id-table-setting-toolbar-textWrap" class="header">文字环绕</p>
+                                    <div class="separator long"></div>
+                                </div>
+                                <div class="toolbar-group tempTableCell">
+                                    <span>
+                                        <label id="id-table-setting-toolbar-textHeight">单元格--高</label>
+                                        <div id="table-spin-cell-height-toolbar"></div>
+                                    </span>
+                                    <span>
+                                        <label id="id-table-setting-toolbar-textWidth">单元格--宽</label>
+                                        <div id="table-spin-cell-width-toolbar"></div>
+                                    </span>
+                                    <div class="separator long"></div>
+                                </div>
+                                <div class="toolbar-group tempTableformula">
+                                    <span class="btn-placeholder split" id="id-toolbar-placeholder-btn-add-formula-toolbar"></span>
+                                    <div class="separator long"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-start-full" class="FullStart">
+                            <div class="toolbar-group tempCutpanel" id="id-toolbar-div-TextCutpanel">
+                                <div>
+                                    <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-paste">
+                                        <div class="btn-group" id="id-toolbar-btn-paste">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">粘贴</span>
+                                                <span class="btn-icon btn-paste btn-big">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div>
+                                    <div class="toolbar-row">
+                                        <span class="btn-placeholder split"
+                                            id="id-toolbar-full-placeholder-btn-cut">
+                                            <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-cut">
+                                                <span class="caption">剪切</span>
+                                                <span class="btn-icon btn-cut">&nbsp;</span>
+                                            </button>
+                                        </span>
+                                        <span class="btn-placeholder split"
+                                            id="id-toolbar-full-placeholder-btn-copy">
+                                            <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-copy">
+                                                <span class="caption" style="">复制</span>
+                                                <span class="btn-icon btn-copy">&nbsp;</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="toolbar-row">
+                                        <span class="btn-placeholder split"
+                                            id="id-toolbar-full-placeholder-btn-copystyle">
+                                            <button type="button" class="btn btn-toolbar"
+                                                id="id-toolbar-btn-copystyle">
+                                                <span class="caption" style="">格式刷</span>
+                                                <span class="btn-icon btn-copystyle">&nbsp;</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="id-toolbar-tempTextCutpanel">剪贴板</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempFont">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder" id="id-toolbar-full-placeholder-field-fontname">
+                                        <div class="input-group combobox fonts input-group-nr">
+                                            <input type="text" class="form-control" autocomplete="off"/>
+                                            <div style="display: table-cell;"></div>
+                                            <button type="button" class="btn btn-default dropdown-toggle">
+                                                <span class="caret img-commonctrl"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder" id="id-toolbar-full-placeholder-field-fontsize">
+                                        <span class="input-group combobox input-group-nr">
+                                            <input type="text" class="form-control" autocomplete="off"/>
+                                            <button type="button" class="btn btn-default dropdown-toggle">
+                                                <span class="caret img-commonctrl"></span>
+                                            </button>
+                                        </span>
+                                    </span>
+                                    <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-incfont">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-incfont">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-incfont">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-decfont">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-decfont">
+                                            <span class="caption"></span><span
+                                                class="btn-icon btn-decfont">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-bold">
+                                        <button type="button" class="btn btn-toolbar active"
+                                            id="id-toolbar-btn-bold">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-bold">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-italic">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-italic">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-italic">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-underline">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-underline">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-underline">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-strikeout">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-strikeout">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-strikeout">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-superscript">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="id-toolbar-btn-superscript">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-superscript">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-subscript">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-subscript">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-subscript">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-highlight">
+                                        <div class="btn-group split" id="id-toolbar-btn-highlight">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-highlight">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-fontcolor">
+                                        <div class="btn-group split" id="id-toolbar-btn-fontcolor">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-fontcolor">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-paracolor">
+                                        <div class="btn-group split" id="id-toolbar-btn-paracolor">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-paracolor">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div>
+                                    <p id="id-toolbar-tempTextFont">字体</p>
+                                    <span class="btn-icon font-advanced-link" id="font-full-advanced-link-start">
+                                        <button type="button" class="btn btn-toolbar" id="font-advanced-link-start"
+                                            data-toggle="tooltip" data-original-title="" title="">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-font-advanced">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempParagraph">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-full-placeholder-btn-markers">
+                                        <div class="btn-group split" id="id-toolbar-btn-markers">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-setmarkers">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder "
+                                        id="id-toolbar-full-placeholder-btn-numbering">
+                                        <div class="btn-group split" id="id-toolbar-btn-numbering">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-numbering">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-multilevels">
+                                        <div class="btn-group" id="id-toolbar-btn-multilevels">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-multilevels">&nbsp;</span>
+                                                <span class="caret img-commonctrl"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-decoffset">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-decoffset">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-decoffset">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-incoffset">
+                                        <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-incoffset">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-incoffset">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder "
+                                        id="id-toolbar-full-placeholder-btn-linespace">
+                                        <div class="btn-group" id="id-toolbar-btn-linespace">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-linespace">&nbsp;</span>
+                                                <span class="caret img-commonctrl"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-align-left">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="id-toolbar-btn-align-left">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-align-left">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-align-center">
+                                        <button type="button" class="btn btn-toolbar active"
+                                            id="id-toolbar-btn-align-center">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-align-center">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-align-right">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="id-toolbar-btn-align-right">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-align-right">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-align-just">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="id-toolbar-btn-align-just">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-align-just">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-hidenchars">
+                                        <div class="btn-group split" id="id-toolbar-btn-hidenchars">
+                                            <button type="button" class="btn btn-toolbar">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-hidenchars">&nbsp;</span>
+                                            </button>
+                                            <button type="button" class="btn btn-toolbar dropdown-toggle"
+                                                data-toggle="dropdown">
+                                                <span class="caret img-commonctrl"></span>
+                                                <span class="sr-only"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="id-toolbar-tempTextPara">
+                                    <p id="id-toolbar-tempTextPara">段落</p>
+                                    <span class="btn-icon paragraph-advanced-link"
+                                        id="paragraph-full-advanced-link-start">
+                                        <button type="button" class="btn btn-toolbar"
+                                            id="paragraph-advanced-link-start"
+                                            style="width: 14px;height: 14px;min-width: 14px;">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-paragraph-advanced">&nbsp;</span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempStyle" id="start-style-div">
+                                <div class="toolbar-group">
+                                    <div class="toolbar-group" id="id-toolbar-full-placeholder-field-styles"></div>
+                                    <div id="id-toolbar-tempTextStyle">样式</div>
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempEdit" id="id-toolbar-div-editing">
+                                <div>
+                                    <div class="toolbar-row">
+                                        <span class="btn-placeholder split"
+                                            id="id-toolbar-full-placeholder-btn-find">
+                                            <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-find">
+                                                <span class="caption">查找</span>
+                                                <span class="btn-icon btn-find">&nbsp;</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="toolbar-row">
+                                        <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-advfind">
+                                            <button type="button" class="btn btn-toolbar" id="id-toolbar-btn-advfind">
+                                                <span class="caption">高级查找</span>
+                                                <span class="btn-icon btn-advfind">&nbsp;</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="toolbar-row">
+                                        <span class="btn-placeholder split"
+                                            id="id-toolbar-full-placeholder-btn-replace">
+                                            <button type="button" class="btn btn-toolbar"
+                                                id="id-toolbar-btn-replace">
+                                                <span class="caption">替换</span>
+                                                <span class="btn-icon btn-replace">&nbsp;</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="id-toolbar-tempTextEdit">编辑</div>
+                                <div class="separator long"></div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-insert-full" class="FullInsert">
+                            <div class="toolbar-group tempInsertBlankPage">
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-blank">
+                                    <div class="btn-group" id="id-toolbar-btn-slot-blank">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">空白页</span>
+                                            <span class="btn-icon btn-slot-blank btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-pagebreak">
+                                    <div class="btn-group" id="id-toolbar-btn-pagebreak">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">分隔符</span>
+                                            <span class="btn-icon btn-pagebreak btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextPage" class="toolbar-insert-full-text-style">页面</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempInsertTable">
+                                <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-inserttable">
+                                    <div class="btn-group" id="id-toolbar-btn-inserttable">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">表格</span>
+                                            <span class="btn-icon btn-inserttable btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextTable" class="toolbar-insert-full-text-style">表格</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempInsertHeaderAndFooter">
+                                <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-editheader">
+                                    <div class="btn-group" id="id-toolbar-btn-editheader">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">页眉和页脚</span>
+                                            <span class="btn-icon btn-editheader btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder"
+                                    id="id-toolbar-full-placeholder-btn-insertpagenum">
+                                    <div class="btn-group" id="id-toolbar-btn-insertpagenum">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">页码</span>
+                                            <span class="btn-icon btn-insertpagenum btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextHeFo" class="toolbar-insert-full-text-style">页眉和页脚</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempInsertChart">
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-insertimage">
+                                    <div class="btn-group" id="id-toolbar-btn-insertimage">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">图片</span>
+                                            <span class="btn-icon btn-insertimage btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-insertchart">
+                                    <div class="btn-group" id="id-toolbar-btn-insertchart">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">图表</span>
+                                            <span class="btn-icon btn-insertchart btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-insertshape">
+                                    <div class="btn-group" id="id-toolbar-btn-insertshape">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">形状</span>
+                                            <span class="btn-icon btn-insertshape btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextChart" class="toolbar-insert-full-text-style">图像和图形
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempInsertWatermark">
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-slot-watermark">
+                                    <div class="btn-group" id="id-toolbar-btn-slot-watermark">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">水印</span>
+                                            <span class="btn-icon btn-slot-watermark btn-big">&nbsp;</span>
+                                            <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextWatermark" class="toolbar-insert-full-text-style">水印
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempInsertWordArt">
+                                <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-inserttext">
+                                    <div class="btn-group" id="id-toolbar-btn-inserttext">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">文本框</span>
+                                            <span class="btn-icon btn-text btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-insertWordArt">
+                                    <div class="btn-group" id="id-toolbar-btn-wordArt">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption" style="margin:36px 0 6px 0;">艺术字</span>
+                                            <span class="btn-icon btn-wordArt btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-dropcap">
+                                    <div class="btn-group" id="id-toolbar-btn-dropcap">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">首字下沉</span>
+                                            <span class="btn-icon btn-dropcap btn-dropcap-new btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempText" class="toolbar-insert-full-text-style">文本</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempInsertLink">
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-inserthyperlink">
+                                    <div class="btn-group" id="id-toolbar-btn-inserthyperlink">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption" style="margin:36px 0 6px 0;">链接</span>
+                                            <span class="btn-icon btn-inserthyperlink btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextLink" class="toolbar-insert-full-text-style">链接</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempInsertEquation">
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-insertequation">
+                                    <div class="btn-group" id="id-toolbar-btn-insertequation">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">公式</span>
+                                            <span class="btn-icon btn-insertequation btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-insertsymbol">
+                                    <div class="btn-group" id="id-toolbar-btn-slot-symbol">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">符号</span>
+                                            <span class="btn-icon btn-slot-symbol btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextEquation" class="toolbar-insert-full-text-style">公式和符号
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempInsertAnnotation">
+                                <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-comments">
+                                    <div class="btn-group" id="id-toolbar-btn-commonts">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">批注</span>
+                                            <span class="btn-icon btn-commonts btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextAnno" class="toolbar-insert-full-text-style">批注</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempInsertContentControl">
+                                <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-controls">
+                                    <div class="btn-group" id="id-toolbar-btn-slot-controls">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">内容控件</span>
+                                            <span class="btn-icon btn-slot-controls btn-big">&nbsp;</span>
+                                            <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextControls" class="toolbar-insert-full-text-style">内容控件
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempSignature">
+                                <span class="btn-placeholder split"
+                                      id="id-toolbar-full-placeholder-btn-signature">
+                                    <div class="btn-group" id="id-toolbar-btn-signature">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                            <span class="caption">签名</span>
+                                            <span class="btn-icon btn-insertsignature btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder split"
+                                      id="id-toolbar-full-placeholder-btn-seal">
+                                    <div class="btn-group" id="id-toolbar-btn-seal">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                            <span class="caption">签章</span>
+                                            <span class="btn-icon btn-insertseal btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder split"
+                                      id="id-toolbar-full-placeholder-btn-approval" style="display:none">
+                                    <div class="btn-group" id="id-toolbar-btn-approval">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                            <span class="caption">确认</span>
+                                            <span class="btn-icon btn-insertapproval btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempSignature" class="toolbar-insert-full-text-style">签名签章
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-format-full" class="FullFormat">
+                            <div class="toolbar-group tempPageSetting">
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-pagemargins">
+                                    <div class="btn-group" id="id-toolbar-btn-pagemargins">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">页边距</span>
+                                            <span class="btn-icon btn-pagemargins btn-big">&nbsp;</span>
+                                            <span class="btn-icon new-toolbar-drown-icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-pageorient">
+                                    <div class="btn-group" id="id-toolbar-btn-pageorient">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">方向</span>
+                                            <span class="btn-icon btn-pageorient btn-big">&nbsp;</span>
+                                            <span class="btn-icon new-toolbar-drown-icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-pagesize">
+                                    <div class="btn-group" id="id-toolbar-btn-pagesize">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">纸张大小</span>
+                                            <span class="btn-icon btn-pagesize btn-big">&nbsp;</span>
+                                            <span class="btn-icon new-toolbar-drown-icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-columns">
+                                    <div class="btn-group" id="id-toolbar-btn-columns">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">分栏</span>
+                                            <span class="btn-icon btn-columns btn-big">&nbsp;</span>
+                                            <span class="btn-icon new-toolbar-drown-icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextPageSetting" class="toolbar-format-full-text-style">
+                                    页面设置</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempParagraphSetting">
+                                <div id="id-paragraph-settings-format">
+                                    <div class="btn-placeholder-div" id="btn-placeholder-div-paragraphIndent">
+                                        <p id="id-toolbar-tempTextInd">缩进</p>
+                                        <span class="btn-placeholder">
+                                            <span
+                                                id="id-toolbar-full-placeholder-btn-spinner-decoffset">&nbsp;</span>
+                                            <span class="btn-icon btn-spinner-decoffset"></span>
+                                            <span id="id-toolbar-tempTextLeft">左</span>
+                                            <span id="id-paragraph-dec-spacing-left" class="spinner">
+                                                <input type="text" class="form-control" style="height: 22px;" autocomplete="off"/>
+                                                <div class="spinner-buttons">
+                                                    <button type="button" class="spinner-up"><i
+                                                            class="img-commonctrl"></i></button>
+                                                    <button type="button" class="spinner-down"><i
+                                                            class="img-commonctrl"></i></button>
+                                                </div>
+                                            </span>
+                                        </span>
+                                        <span class="btn-placeholder">
+                                            <span
+                                                id="id-toolbar-full-placeholder-btn-spinner-incoffset">&nbsp;</span>
+                                            <span class="btn-icon btn-spinner-incoffset"></span>
+                                            <span id="id-toolbar-tempTextRight">右</span>
+                                            <span id="id-paragraph-inc-spacing-right" class="spinner">
+                                                <input type="text" class="form-control" style="height: 22px;" autocomplete="off"/>
+                                                <div class="spinner-buttons">
+                                                    <button type="button" class="spinner-up"><i
+                                                            class="img-commonctrl"></i></button>
+                                                    <button type="button" class="spinner-down"><i
+                                                            class="img-commonctrl"></i></button>
+                                                </div>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="btn-placeholder-div" id="btn-placeholder-div-paragraphSpacing">
+                                        <p id="id-toolbar-tempTextSpa">间距</p>
+                                        <span class="btn-placeholder"
+                                            id="id-toolbar-full-placeholder-btn-para-before">
+                                            <span class="btn-icon btn-spinner-before">&nbsp;</span>
+                                            <span id="id-toolbar-tempTextPreS">段前</span>
+                                            <span id="id-paragraph-spin-spacing-before" class="spinner">
+                                                <input type="text" class="form-control" style="height: 22px;" autocomplete="off"/>
+                                                <div class="spinner-buttons">
+                                                    <button type="button" class="spinner-up"><i
+                                                            class="img-commonctrl"></i></button>
+                                                    <button type="button" class="spinner-down"><i
+                                                            class="img-commonctrl"></i></button>
+                                                </div>
+                                            </span>
+                                        </span>
+                                        <span class="btn-placeholder"
+                                            id="id-toolbar-full-placeholder-btn-para-after">
+                                            <span class="btn-icon btn-spinner-after">&nbsp;</span>
+                                            <span id="id-toolbar-tempTextBackS">段后</span>
+                                            <span id="id-paragraph-spin-spacing-after" class="spinner">
+                                                <input type="text" class="form-control" style="height: 22px;" autocomplete="off"/>
+                                                <div class="spinner-buttons">
+                                                    <button type="button" class="spinner-up"><i
+                                                            class="img-commonctrl"></i></button>
+                                                    <button type="button" class="spinner-down"><i
+                                                            class="img-commonctrl"></i></button>
+                                                </div>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p id="id-toolbar-tempTextParaSetting">段落</p>
+                                    <span class="btn-icon paragraph-advanced-link"
+                                        id="paragraph-full-advanced-link-format">
+                                        <div class="btn-group" id="paragraph-advanced-link-format">
+                                            <button type="button" class="btn btn-toolbar"
+                                                id="paragraph-advanced-link-format-btn">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-paragraph-advanced-">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-quote-full" class="FullQuote">
+                            <div class="toolbar-group tempContents">
+                                <div class="contents">
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-full-placeholder-btn-slot-contents">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-contents">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-slot-contents btn-big">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder"
+                                        id="id-toolbar-full-placeholder-btn-slot-contents-drop">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-contents-drop">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">目 录</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="contents-update">
+                                    <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-slot-contents-update">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-contents-update">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-slot-contents-update btn-big">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-slot-contents-update-drop">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-contents-update-drop">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption">刷 新</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="navigation">
+                                    <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-slot-navigation">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-navigation">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption">导航</span>
+                                                <span class="btn-icon btn-slot-navigation btn-big">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div id="id-toolbar-tempTextContents">目录</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempFootnote">
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-slot-notes">
+                                    <div class="btn-group" id="id-toolbar-btn-slot-notes">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-notes btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-slot-notes-drop">
+                                    <div class="btn-group" id="id-toolbar-btn-slot-notes-drop">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">脚 注</span>
+                                            <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextFootnote">脚注</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempCaptionAndLink">
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-slot-bookmarks">
+                                    <div class="btn-group" id="id-toolbar-btn-slot-bookmarks">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">书签</span>
+                                            <span class="btn-icon btn-slot-bookmarks btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-slot-caption">
+                                    <div class="btn-group" id="id-toolbar-btn-slot-caption">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">题注</span>
+                                            <span class="btn-icon btn-slot-caption btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder"
+                                    id="id-toolbar-full-placeholder-btn-slot-inshyperlink">
+                                    <div class="btn-group" id="id-toolbar-btn-slot-hyperlink">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">链接</span>
+                                            <span class="btn-icon btn-inserthyperlink btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTextLink2">链接</div>
+                                <div class="separator long"></div>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-coordination-full" class="FullCoordination">
+                            <div class="toolbar-group tempCoordination">
+                                <div class="toolbar-row">
+                                    <span class="btn-placeholder split"
+                                        id="id-toolbar-full-placeholder-btn-coauthmode">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-coedit">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                                data-toggle="dropdown">
+                                                <span class="caption">协同编辑模式</span>
+                                                <span class="btn-icon btn-slot-coedit btn-big">&nbsp;</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div id="id-toolbar-tempCoordination" class="toolbar-coordination-full-text-style">
+                                    协同编辑模式</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempComments">
+                                <div class="placeholder-cocomments">
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-cocomments">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-commonts">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-slot-commonts btn-big">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-allcocomments">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-allcommonts">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar">
+                                                <span class="caption"></span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="placeholder-corecomments">
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-corecomments">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-recomment">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-recomment btn-big">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-corecomments-drop">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-comment-drop">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div id="id-toolbar-tempComments" class="toolbar-coordination-full-text-style">批注
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempTrack">
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-review-panel">
+                                    <div class="btn-group" id="id-toolbar-btn-review-panel">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">审阅窗格</span>
+                                            <span class="btn-icon btn-review btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-review-on">
+                                    <div class="btn-group" id="id-toolbar-btn-trunon">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar">
+                                            <span class="caption">跟踪变化</span>
+                                            <span class="btn-icon btn-trunon btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder split"
+                                    id="id-toolbar-full-placeholder-btn-review-view">
+                                    <div class="btn-group" id="id-toolbar-btn-slot-review-view">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">显示模式</span>
+                                            <span class="btn-icon btn-slot-review-view btn-big">&nbsp;</span>
+                                            <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempTrack" class="toolbar-coordination-full-text-style"> 追踪
+                                </div>
+                                <div id="id-review-change-seperator" class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempChanges">
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-change-prev"
+                                    style="width:50px;">
+                                    <div class="btn-group" id="id-toolbar-btn-review-prev">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">上一条</span>
+                                            <span class="btn-icon btn-review-prev btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <span class="btn-placeholder" id="id-toolbar-full-placeholder-btn-change-next"
+                                    style="width:50px;">
+                                    <div class="btn-group" id="id-toolbar-btn-review-next">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">下一条</span>
+                                            <span class="btn-icon btn-review-next btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div class="placeholder-accept">
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-change-accept">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-accept">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-accept-big btn-big">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-change-accept-drop">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-accept-drop">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption">接受</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="placeholder-reject">
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-change-reject">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-reject">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption"></span>
+                                                <span class="btn-icon btn-reject-big btn-big">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-change-reject-drop">
+                                        <div class="btn-group" id="id-toolbar-btn-slot-reject-drop">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption">拒绝</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div id="id-toolbar-tempChanges" class="toolbar-coordination-full-text-style">更改
+                                </div>
+                                <div id="id-reject-char-seperator" class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempChat">
+                                <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-chat">
+                                    <div class="btn-group" id="id-toolbar-btn-chat">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar">
+                                            <span class="caption">聊天</span>
+                                            <span class="btn-icon btn-chat btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempChat" class="toolbar-coordination-full-text-style">聊天</div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempHistory" id="id-toolbar-full-tempHistory">
+                                <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-history">
+                                    <div class="btn-group" id="id-toolbar-btn-history">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar"
+                                            data-toggle="dropdown">
+                                            <span class="caption">历史版本</span>
+                                            <span class="btn-icon btn-history btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempHistory" class="toolbar-coordination-full-text-style">历史版本
+                                </div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group tempCompare" id="id-toolbar-full-tempCompare">
+                                    <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-compare">
+                                        <div class="btn-group" id="id-toolbar-btn-compare">
+                                            <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                                <span class="caption">文档比较</span>
+                                                <span class="btn-icon btn-compare btn-big">&nbsp;</span>
+                                                <span class="btn-icon btn-down-icon">&nbsp;</span>
+                                            </button>
+                                        </div>
+                                    </span>
+                                <div id="id-toolbar-tempCompare" class="toolbar-compare-full-text">文档比较</div>
+                                <div class="separator long" ></div>
+                            </div>
+                            <div class="toolbar-group tempRestricted" id="id-toolbar-full-tempRestrictedEdit">
+                                 <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-restrictedEdit">
+                                      <div class="btn-group" id="id-toolbar-btn-restrictedEdit">
+                                           <button type="button" class="btn dropdown-toggle btn-toolbar" data-toggle="dropdown">
+                                               <span class="caption">文档保护</span>
+                                               <span class="btn-icon btn-restrict btn-big">&nbsp;</span>
+                                           </button>
+                                       </div>
+                                 </span>
+                                 <div id="id-toolbar-tempRestricted" class="toolbar-restrict-full-text">文档保护</div>
+                                 <div class="separator long" ></div>
+                            </div>
+                            <div class="toolbar-group tempDocAI">
+                                <span class="btn-placeholder split" id="id-toolbar-full-placeholder-btn-docAI">
+                                    <div class="btn-group" id="id-toolbar-btn-docAI">
+                                        <button type="button" class="btn dropdown-toggle btn-toolbar">
+                                            <span class="caption"></span>
+                                            <span class="btn-icon btn-notion btn-big">&nbsp;</span>
+                                        </button>
+                                    </div>
+                                </span>
+                                <div id="id-toolbar-tempDocAI" class="toolbar-coordination-full-text-style"></div>
+                                <div class="separator long"></div>
+                            </div>
+                            <div class="toolbar-group">
+                                  <span id="ToolTipByCus" style="font-size: 20px;color: red;margin-left: 20px;margin-top: 20px;line-height: 100px;"></span>
+                            </div>
+                        </div>
+                        <div id="id-toolbar-custome-full" style="display: none; width: 100%; position: relative; left: 40px; top: 0px;"></div>
+                    </div>
+                  </div>
+                 </div>
+                <div class="layout-item" id="main-viewport-hbox-layout" style="top: 50px; height: 100%;">
+                    <div id="viewport-hbox-layout" class="layout-ct hbox">
+                        <div id="id-left-panel-btn" class="tool-menu-btns" style="width: 300px;display: none">
+                            <div>
+                                <span id="id-left-menu-options" class="header" style="position: absolute;top: 7px;"></span>
+                                <span id="id-left-menu-close" style="position: absolute;top: 6px;right:6px;">关闭</span>
+                            </div>
+                            <button id="id-left-panel-navigation" class="btn btn-category">导航</button>
+                            <button id="id-left-panel-chat" class="btn btn-category">聊天</button>
+                            <button id="id-left-panel-comments" class="btn btn-category">批注</button>
+                            <button id="id-left-panel-review" class="btn btn-category" >修订</button>
+                            <button id="id-left-panel-search" class="btn btn-category" >查找</button>
+                        </div>
+                        <div id="left-menu-navigation" class="layout-item" style="width: 0px; left: 0px;">
+                            <div id="left-panel-navigation" class="" style="display: none; height: 100%;">
+                                <div id="navigation-box" class="layout-ct vbox">
+                                    <div class="navigation-close">
+                                        <div id="navigation-close" class="img-commonctrl"></div>
+                                        <span id="navigation-header" class="title">导航</span>
+                                    </div>
+                                    <div id="navigation-list" style="height:calc(100% - 33px);overflow-y:auto">
+                                        <div class="treeview inner ps-container oo">
+                                            <table cellpadding="10" class="empty-text">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>创建文档的交互式大纲。<br>它是跟踪您的具体位置或快速移动内容的好方式。<br>要开始，请转到“开始”选项卡，并向文档中的标题应用标题样式。</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="left-panel-plugins" class="" style="display: none; height: 100%;"></div>
+                        </div>
+                        <div id="left-panel-chat" class="layout-item" style="display: none; width: 300px;">
+                            <div id="chat-box" class="layout-ct vbox">
+                                <span class="btn-icon-close img-commonctrl" style="position: absolute;top: 7px;right:5px;"></span>
+                                <div id="chat-users" class="layout-item area ps-container oo" style="height: 30px;"></div>
+                                <div id="chat-messages" class="layout-item area ps-container oo" style="height: 0px;">
+                                    <div id="chat-message-ct"></div>
+                                </div>
+                                <div id="chat-options" class="layout-item" style="height: 320px;">
+                                    <div id="chat-options-ct">
+                                        <textarea id="chat-msg-text" class="user-select" maxlength="32767" style="height: 100%;"></textarea>
+                                        <button id="chat-msg-btn-add" class="btn normal dlg-btn primary">发送</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="left-panel-comments" class="layout-item" style="display: none;">
+                            <div id="comments-box" class="layout-ct vbox">
+                                <span class="btn-icon-close img-commonctrl" style="position: absolute;top: 7px;right: 5px;"></span>
+                                <div id="commentTitle" class="title" style="width: 275px;">
+                                    <span class="title">批注</span>
+                                </div>
+                                <div id="commentNumber" class="record" style="width: 100%;">0条批注</div>
+                                <div class="layout-item messages-ct" style="height: 55px;">
+                                    <div class="dataview-ct inner ps-container oo"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="left-panel-review" class="layout-item" style="display: none;">
+                            <div id="review-box" class="layout-ct vbox">
+                                <span class="btn-icon-close img-commonctrl" style="position: absolute;top: 7px;right:5px;"></span>
+                                <div id="reviewTitle" class="title" style="width: 210px;"><span class="title">修订</span></div>
+                                <div id="reviewNumber" class="record" style="width: 100%;">0条修订</div>
+                                <div id="review-list" class="layout-item review-ct ps-container oo" style="height: 100px;"></div>
+                            </div>
+                        </div>
+                        <div id="editor_sdk" class="layout-item"></div>
+                        <div id="right-menu" class="layout-item" style="display:none;">
+                            <div id="view-right-menu" class="tool-menu right">
+                                <div class="tool-menu-btns">
+                                    <div>
+                                        <span id="id-right-menu-format-options" class="header" style="position: absolute;top: 7px;">格式选项</span>
+                                        <span class="btn-icon-close img-commonctrl" style="position: absolute;top: 7px;right:13px;" data-original-title="" title=""></span>
+                                    </div>
+                                    <div class="ct-btn-category arrow-left"></div>
+                                    <button id="id-right-menu-text" class="btn btn-category arrow-left" content-target="id-paragraph-settings-new">
+                                        <span class="img-toolbarmenu btn-menu-text">段落</span>
+                                    </button>
+                                    <button id="id-right-menu-table" class="btn btn-category arrow-left disabled" content-target="id-table-settings">
+                                        <span class="img-toolbarmenu btn-menu-table">表格</span>
+                                    </button>
+                                    <button id="id-right-menu-header" class="btn btn-category arrow-left disabled" content-target="id-header-settings">
+                                        <span class="img-toolbarmenu btn-menu-header">页眉</span>
+                                    </button>
+                                    <button id="id-right-menu-shape" class="btn btn-category arrow-left disabled" content-target="id-shape-settings">
+                                        <span class="img-toolbarmenu btn-menu-shape">形状</span>
+                                    </button>
+                                    <button id="id-right-menu-chart" class="btn btn-category arrow-left disabled" content-target="id-chart-settings" >
+                                        <span class="img-toolbarmenu btn-menu-chart">图表</span>
+                                    </button>
+                                    <button id="id-right-menu-image" class="btn btn-category arrow-left disabled" content-target="id-image-settings" >
+                                        <span class="img-toolbarmenu btn-menu-image">图片</span>
+                                    </button>
+                                    <button id="id-right-menu-textart" class="btn btn-category arrow-left disabled" content-target="id-textart-settings">
+                                        <span class="img-toolbarmenu btn-menu-textart">艺术字</span>
+                                    </button>
+                                    <button id="id-right-menu-mail-merge" class="btn btn-category arrow-left disabled" content-target="id-mail-merge-settings">
+                                        <span class="btn-icon img-toolbarmenu btn-menu-mail-merge">邮件</span>
+                                    </button>
+                                </div>
+                                <div class="right-panel" style="display: inline-block;width: 100%;">
+                                    <div id="id-shape-settings" class="settings-panel" style="display: none;width: 102%;"></div>
+                                    <div id="id-image-settings" class="settings-panel" style="display: none;width: 100%;"></div>
+                                    <div id="id-textart-settings" class="settings-panel" style="display: none;width: 100%;"></div>
+                                    <div id="id-paragraph-settings-new" class="settings-panel" style="display: none;width: 100%;"></div>
+                                    <div id="id-table-settings" class="settings-panel" style="display: none;width: 100%;"></div>
+                                    <div id="id-header-settings" class="settings-panel" style="display: none;width: 100%;"></div>
+                                    <div id="id-chart-settings" class="settings-panel" style="display: none;width:100%;"></div>
+                                    <div id="id-mail-merge-settings" class="settings-panel" style="display: none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="right-panel-restrict" class="layout-item" style="display: none;">
+                            <div id="restrict-box" class="layout-ct vbox">
+                                <span class="btn-icon-close img-commonctrl" style="position: absolute;top: 7px;right:5px;" data-original-title="" title=""></span>
+                                <div id="restrictTitle" class="title" style="width: 175px;">
+                                    <span class="title">限制编辑</span>
+                                </div>
+                                <div id="restrict-messages" style="height: 100px; overflow-y: auto; width: 100%;"></div>
+                                <div class="layout-resizer after"></div>
+                            </div>
+                        </div>
+                        <div id="left-panel-history" class="layout-item" style="width: 0px;">
+                            <div id="history-box" class="layout-ct vbox">
+                                <div id="history-header">
+                                    <div id="history-btn-back" data-toggle="tooltip" data-original-title="" title="">
+                                        <span class="btn-icon-close gray"></span></div>
+                                </div>
+                                <div id="history-list">
+                                    <div class="dataview inner ps-container oo">
+                                    </div>
+                                </div>
+                                <div id="history-expand-changes">
+                                    <div id="history-btn-expand">隐藏详细的更改</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layout-resizer after" style="display: none;"></div>
+                        <div id="review-changes-panel" style="display: none;"></div>
+                        <div id="left-panel-search" class="layout-item" style="display: none;"></div>
+                    </div>
+                </div>
+                <div class="layout-item" id="statusbar">
+                    <div class="statusbar" style="display:table;">
+                        <div id="status-tabs-scroll" class="status-group">
+                            <button id="status-btn-tabfirst" type="button" class="btn small btn-toolbar">
+                                <span class="btn-icon btn-tab-first">&nbsp;</span>
+                            </button>
+                            <button id="status-btn-tabback" type="button" class="btn small btn-toolbar">
+                                <span class="btn-icon btn-tab-back">&nbsp;</span>
+                            </button>
+                            <button id="status-btn-tabnext" type="button" class="btn small btn-toolbar">
+                                <span class="btn-icon btn-tab-next">&nbsp;</span>
+                            </button>
+                            <button id="status-btn-tablast" type="button" class="btn small btn-toolbar">
+                                <span class="btn-icon btn-tab-last">&nbsp;</span>
+                            </button>
+                        </div>
+                        <div class="status-group dropup">
+                            <label id="label-pages" class="status-label dropdown-toggle" style="margin-left: 40px;" data-toggle="dropdown"></label>
+                            <div id="status-goto-box" class="dropdown-menu">
+                                <label style="float:left;line-height:22px;"></label>
+                                <div id="status-goto-page" style="display:inline-block;">
+                                    <div class="input-field" style="width: 60px;">
+                                        <input type="text" spellcheck="false" class="form-control" autocomplete="off"/>
+                                        <span class="input-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="status-users-ct" class="status-group dropup" style="display:none;">
+                            <div class="separator short" style="margin-right: 12px; margin-left: 40px;"></div>
+                            <div id="status-users-block" style="display:inline-block; cursor:pointer;">
+                                <span id="users-icon" class="img-commonctrl" style="margin-bottom: 2px;"></span>
+                                <label id="status-users-count" class="status-label" style="font-size: 14px; font-weight: normal; margin-top: -1px;">+</label>
+                            </div>
+                            <div id="status-users-menu" class="dropdown-menu">
+                                <label id="status-users-tip" style="display: block; margin-right: 14px;"></label>
+                                <div id="status-users-list"></div>
+                                <label id="status-change-rights" class="link" style="margin-top: 15px; display: none;">更改访问权限</label>
+                            </div>
+                            <div class="separator short" style="margin-left: 10px;"></div>
+                        </div>
+                        <div class="status-group" style="width:100%; text-align:center;">
+                            <label id="label-action" class="status-label"></label>
+                        </div>
+                        <div class="status-group right-btn">
+                            <div class="separator short el-edit"></div>
+                            <button id="btn-view-print" type="button" class="btn small btn-toolbar" style="display: none;">
+                                <span class="btn-icon btn-ic-print">&nbsp;</span>
+                            </button>
+                            <div id="id-btn-view-download" class="btn small btn-toolbar" data-toggle="tooltip" data-original-title="" title="" style="display: none; margin: auto 6px;">
+                                <div class="dropdown-toggle" data-toggle="dropdown">
+                                    <span class="status-label btn-icon btn-ic-download"></span>
+                                </div>
+                            </div>
+                            <div id="btn-doc-review" class="el-edit el-review" style="display: inline-block;">
+                                <div class="btn-group split">
+                                    <button type="button" class="btn btn-toolbar">
+                                        <span class="caption"></span>
+                                        <span class="btn-icon btn-ic-review">&nbsp;</span>
+                                    </button>
+                                    <button type="button" class="btn btn-toolbar dropdown-toggle" data-toggle="dropdown">
+                                        <span class="caret img-commonctrl"></span>
+                                        <span class="sr-only"></span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="separator short el-edit el-review"></div>
+                            <button id="btn-zoom-topage" type="button" class="btn small btn-toolbar">
+                                <span class="btn-icon btn-ic-zoomtopage">&nbsp;</span>
+                            </button>
+                            <button id="btn-zoom-towidth" type="button" class="btn small btn-toolbar">
+                                <span class="btn-icon btn-ic-zoomtowidth">&nbsp;</span>
+                            </button>
+                            <button id="btn-zoom-down" type="button" class="btn small btn-toolbar">
+                                <span class="btn-icon btn-ic-zoomdown">&nbsp;</span>
+                            </button>
+                            <div id="MenuZoom-cnt-zoom" class="cnt-zoom" data-toggle="tooltip" data-original-title="" title="">
+                                <div class="dropdown-toggle" data-toggle="dropdown">
+                                    <label id="label-zoom" class="status-label" style="min-width: 70px;">缩放100％</label>
+                                </div>
+                            </div>
+                            <button id="btn-zoom-up" type="button" class="btn small btn-toolbar" style="margin-right:15px;">
+                                <span class="btn-icon btn-ic-zoomup">&nbsp;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id="currentActiveMenu" type="hidden" value="start" />
+    <input id="currentActiveModel" type="hidden" value="full" />
+    <input id="needChangeMenu" type="hidden" value="0" />
+    <script src="../../../externs/requirejs/require.js"></script>
+    <script>
+        var version = 'version=1.1.1';
+        var reg = new RegExp('(^|&)' + 'spire_cloud_version' + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            version = 'version=' + r[2];
+        }
+        require.config({
+            urlArgs: version,
+            paths:{
+                'app':'app'
+            }
+        });
+        require(['app']);
+    </script>
+
+</body>
+</html>

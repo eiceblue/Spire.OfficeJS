@@ -1,0 +1,1594 @@
+{
+  "DATE": {
+    "a": "( rok, miesiąc, dzień )",
+    "d": "Funkcje daty i czasu, używane do dodawania wartości czasu w domyślnym formacie MM/dd/rrrr"
+  },
+  "DATEDIF": {
+    "a": "( data rozpoczęcia, data zakończenia, jednostka )",
+    "d": "Funkcja daty i czasu, służąca do zwracania różnicy między dwiema wartościami czasu (wartością czasu rozpoczęcia i wartością czasu zakończenia) zgodnie z określonym interwałem (jednostką)."
+  },
+  "DATEVALUE": {
+    "a": "( ciąg-daty-godziny )",
+    "d": "Funkcja daty i czasu, Numer seryjny użyty do zwrócenia określonej wartości czasu."
+  },
+  "DAY": {
+    "a": "( ata-wartość )",
+    "d": "Funkcja daty i czasu, Zwraca dzień (liczbę od 1 do 31) dla podanej wartości czasu (MM / dd / rrrr)."
+  },
+  "DAYS360": {
+    "a": "( data-początkowa, data-końcowa [, flaga-metody])",
+    "d": "Funkcja daty i czasu, Służy do zwracania liczby dni między dwiema datami, zgodnie z obliczeniem 360 dni w roku (każdy miesiąc liczony jest jako 30 dni, a rok to łącznie 12 miesięcy)."
+  },
+  "EDATE": {
+    "a": "( data rozpoczęcia, przesunięcie miesiąca )",
+    "d": "Funkcja daty i czasu, Służy do zwracania numeru seryjnego reprezentującego datę oddzieloną (przed lub po) określonej dacie (data_początkowa) przez wskazaną liczbę miesięcy."
+  },
+  "EOMONTH": {
+    "a": "( data rozpoczęcia, przesunięcie miesiąca )",
+    "d": "Funkcja daty i czasu, Służy do zwracania numeru seryjnego ostatniego dnia miesiąca przez liczbę miesięcy wskazaną między (po lub po) dacie_początkowej."
+  },
+  "HOUR": {
+    "a": "( wartość czasu )",
+    "d": "Funkcja daty i czasu, Zwraca godzinę dla wartości czasu (liczbę od 0 do 23)."
+  },
+  "MINUTE": {
+    "a": "( wartość czasu )",
+    "d": "Funkcja daty i czasu, Zwraca minutę (liczbę od 0 do 59) wartości czasu."
+  },
+  "MONTH": {
+    "a": "( data-wartość )",
+    "d": "Funkcja daty i czasu, Zwraca miesiąc (liczbę od 1 do 12) z podanej daty w formacie liczbowym (domyślnie MM/dd/rrrr)."
+  },
+  "NETWORKDAYS": {
+    "a": "( data-początkowa, data-końcowa [, święta] )",
+    "d": "Funkcja daty i czasu, Służy do zwracania liczby dni roboczych między dwiema datami (datą początkową i datą końcową), z wyłączeniem weekendów i dat uznawanych za święta."
+  },
+  "NOW": {
+    "a": "()",
+    "d": ""
+  },
+  "SECOND": {
+    "a": "( wartość czasu)",
+    "d": "Funkcja daty i czasu, Zwraca drugą część wartości czasu (liczbę od 0 do 59)."
+  },
+  "TIME": {
+    "a": "( godzina, minuta, sekunda )",
+    "d": "Funkcja daty i czasu, Służy do dodawania określonego czasu w wybranym formacie (domyślnie jest to gg: mm tt)."
+  },
+  "TIMEVALUE": {
+    "a": "( ciąg-daty-godziny )",
+    "d": "Funkcja daty i czasu, Numer seryjny użyty do zwrócenia godziny."
+  },
+  "TODAY": {
+    "a": "()",
+    "d": "Funkcja daty i czasu, Służy do dodawania bieżącej daty w następującym formacie: MM / dd / rr. Ta funkcja nie wymaga parametrów."
+  },
+  "WEEKDAY": {
+    "a": "( wartość-seryjna [, flaga-rozpoczęcia-dnia tygodnia] )",
+    "d": "Funkcja daty i czasu, Służy do określenia, w którym dniu tygodnia jest określona data."
+  },
+  "WEEKNUM": {
+    "a": "( wartość-seryjna [, flaga-rozpoczęcia-dnia tygodnia] )",
+    "d": "Funkcja daty i czasu, Służy do zwracania numeru tygodnia z określonej daty."
+  },
+  "WORKDAY": {
+    "a": "( data-początkowa, przesunięcie dnia [, święta] )",
+    "d": "Funkcja daty i czasu, Zwraca wartość daty dla określonej daty przed lub po określonej dacie (data rozpoczęcia) i określonego dnia roboczego po tej dacie. Dni robocze nie obejmują weekendów i specjalnie wyznaczonych świąt."
+  },
+  "YEAR": {
+    "a": "( data-wartość )",
+    "d": "Funkcja daty i czasu, Zwraca rok z podanej daty w formacie liczbowym (liczba od 1900 do 9999) (wartość domyślna to MM / dd / rrrr)."
+  },
+  "YEARFRAC": {
+    "a": "(  data-początkowa, data-końcowa [, podstawa] )",
+    "d": "Funkcja daty i czasu, Zwraca stosunek liczby dni (dni zaokrąglonych) między dwiema datami (data_początkowa i data_końcowa) w roku."
+  },
+  "BIN2DEC": {
+    "a": "(numer )",
+    "d": "Funkcja inżynierska, używana do konwersji liczb dwójkowych na dziesiętne."
+  },
+  "BIN2HEX": {
+    "a": "( liczba [, liczba-szesnastkowe])",
+    "d": "Funkcja inżynierska, używana do konwersji liczb binarnych na liczby szesnastkowe."
+  },
+  "BIN2OCT": {
+    "a": "( liczba [, liczba-szesnastkowe] )",
+    "d": "Funkcja inżynierska, używana do konwersji liczb binarnych na liczby ósemkowe."
+  },
+  "COMPLEX": {
+    "a": "( liczba rzeczywista, liczba urojona [, przyrostek] )",
+    "d": "Funkcja inżynierska, używana do zamiany części rzeczywistych i urojonych na liczby zespolone, wyrażone w postaci a + bi lub a + bj."
+  },
+  "DEC2BIN": {
+    "a": "( liczba [, liczba-szesnastkowe] )",
+    "d": "Funkcja inżynierska, używana do zamiany liczb dziesiętnych na binarne. "
+  },
+  "DEC2HEX": {
+    "a": "( liczba [, liczba-szesnastkowe] )",
+    "d": "Funkcja inżynierska używana do konwersji liczb dziesiętnych na szesnastkowe."
+  },
+  "DEC2OCT": {
+    "a": "( liczba [, liczba-szesnastkowe] )",
+    "d": "Funkcja inżynierska używana do zamiany liczb dziesiętnych na liczby ósemkowe."
+  },
+  "DELTA": {
+    "a": "( liczba-1 [, liczba-2] )",
+    "d": "Funkcja inżynierska, używana do sprawdzania, czy dwie liczby są równe. Jeśli liczby są równe, funkcja zwraca 1, w przeciwnym razie zwraca 0."
+  },
+  "ERF": {
+    "a": "( dolna granica [, górna granica] )",
+    "d": "Funkcja inżynierska, używana do obliczania funkcji błędu między określoną dolną i górną granicą."
+  },
+  "ERFC.PRECISE": {
+    "a": "( x )",
+    "d": "Funkcja inżynierska, używana do zwracania komplementarnej funkcji ERF zintegrowanej od x do nieskończoności."
+  },
+  "ERFC": {
+    "a": "( Dolna granica )",
+    "d": "Funkcja inżynierska, używana do obliczenia uzupełniającej funkcji błędu między określoną dolną granicą a nieskończonością."
+  },
+  "GESTEP": {
+    "a": "( numer [, krok] )",
+    "d": "Funkcja inżynierska, używana do sprawdzania, czy liczba jest większa niż próg. Jeśli liczba jest większa lub równa progowi, funkcja zwraca 1, w przeciwnym razie zwraca 0."
+  },
+  "HEX2BIN": {
+    "a": "( liczba [, liczba-szesnastkowe] )",
+    "d": "Funkcja inżynierska, używana do konwersji liczb szesnastkowych na liczby binarne."
+  },
+  "HEX2DEC": {
+    "a": "( numer )",
+    "d": "Funkcja inżynierska, używana do konwersji liczby szesnastkowej na dziesiętną."
+  },
+  "HEX2OCT": {
+    "a": "( liczba [, liczba-szesnastkowe] )",
+    "d": "Funkcja inżynierska, używana do konwersji liczby szesnastkowej na liczbę ósemkową."
+  },
+  "IMABS": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwracania wartości bezwzględnej liczby zespolonej."
+  },
+  "IMAGINARY": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwracania części urojonej podanej liczby zespolonej."
+  },
+  "IMARGUMENT": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwracania parametru θ, kąta wyrażonego w radianach。"
+  },
+  "IMCONJUGATE": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwracania sprzężonej liczby zespolonej."
+  },
+  "IMCOS": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwracania cosinusa liczby zespolonej."
+  },
+  "IMCOSH": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska używana do zwracania cosinusa hiperbolicznego liczby zespolonej."
+  },
+  "IMCOT": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwrócenia cotangens liczby zespolonej."
+  },
+  "IMCSC": {
+    "a": "( Liczba zespolona)",
+    "d": "Funkcja inżynierska używana do zwracania cosecansa liczby zespolonej.。"
+  },
+  "IMCSCH": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwracania cosecansa hiperbolicznego liczby zespolonej."
+  },
+  "IMDIV": {
+    "a": "( Liczba zespolona-1 , Liczba zespolona-2 )",
+    "d": "Funkcja inżynierska, używana do zwrócenia ilorazu dwóch liczb zespolonych w postaci a + bi lub a + bj."
+  },
+  "IMEXP": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska używana do zwracania wykładnika dwóch liczb zespolonych w postaci a + bi lub a + bj."
+  },
+  "IMLN": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska używana do zwracania logarytmu naturalnego liczby zespolonej."
+  },
+  "IMLOG10": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwracania wspólnego logarytmu liczb zespolonych (podstawa 10)."
+  },
+  "IMLOG2": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska używana do zwracania logarytmu wspólnego (o podstawie 2) liczb zespolonych."
+  },
+  "IMPOWER": {
+    "a": "( Liczba zespolona, moc )",
+    "d": "Funkcja inżynierska, używana do zwracania liczby zespolonej do potęgi n."
+  },
+  "IMPRODUCT": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja inżynierska używana do zwracania iloczynu określonej liczby zespolonej."
+  },
+  "IMREAL": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, służąca do zwracania części rzeczywistej podanej liczby zespolonej."
+  },
+  "IMSEC": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, zwraca secans liczby zespolonej."
+  },
+  "IMSECH": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwracania secansu hiperbolicznego liczby zespolonej."
+  },
+  "IMSIN": {
+    "a": "( Liczba zespolona)",
+    "d": "unkcja inżynierska używana do zwracania sinusa liczby zespolonej."
+  },
+  "IMSINH": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska zwracająca sinus hiperboliczny liczby zespolonej."
+  },
+  "IMSQRT": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwracania pierwiastka kwadratowego z liczby zespolonej."
+  },
+  "IMSUB": {
+    "a": "( Liczba zespolona-1 , Liczba zespolona-2 )",
+    "d": "unkcja inżynierska, używana do zwracania różnicy dwóch liczb zespolonych w postaci a + bi lub a + bj."
+  },
+  "IMSUM": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja inżynierska, używana do zwracania sumy określonych liczb zespolonych."
+  },
+  "IMTAN": {
+    "a": "( Liczba zespolona )",
+    "d": "Funkcja inżynierska, używana do zwracania stycznej liczby zespolonej."
+  },
+  "OCT2BIN": {
+    "a": "( liczba [, liczba-szesnastkowe] )",
+    "d": "Funkcja inżynierska używana do zamiany liczb ósemkowych na binarne."
+  },
+  "OCT2DEC": {
+    "a": "( liczba )",
+    "d": "Funkcja inżynierska, używana do zamiany liczby ósemkowej na dziesiętną."
+  },
+  "OCT2HEX": {
+    "a": "( liczba [, liczba-szesnastkowe] )",
+    "d": "Funkcja inżynierska, używana do konwersji liczby ósemkowej na szesnastkową."
+  },
+  "CHAR": {
+    "a": "( liczba )",
+    "d": "Funkcje tekstu i danych używane do zwracania znaków ASCII odpowiadających liczbom."
+  },
+  "CLEAN": {
+    "a": "( strunowy )",
+    "d": "Funkcje tekstowe i dane, używane do usuwania wszystkich niedrukowalnych znaków z wybranego ciągu."
+  },
+  "CODE": {
+    "a": "( strunowy )",
+    "d": "Funkcje tekstu i danych zwracające wartość ASCII pierwszego znaku w określonym znaku lub komórce."
+  },
+  "CONCATENATE": {
+    "a": "(tekst1, tekst2, ...)",
+    "d": "Funkcje tekstu i danych, używane do łączenia ciągów tekstowych z dwóch lub więcej komórek w jeden ciąg."
+  },
+  "CONCAT": {
+    "a": "(tekst1, tekst2, ...)",
+    "d": "Funkcje tekstu i danych, używane do łączenia danych z dwóch lub więcej komórek w jedno dane. Ta funkcja zastępuje funkcję ZŁĄCZ.TEKSTY."
+  },
+  "DOLLAR": {
+    "a": "( liczba [, liczba-dziesiętna] )",
+    "d": "Funkcje tekstowe i danych, użyj formatu waluty do konwersji liczb na tekst. Dolar ma format liczbowy $ #. ##, a symbol waluty zależy od lokalnych ustawień języka."
+  },
+  "EXACT": {
+    "a": "(tekst1, tekst2)",
+    "d": "Funkcje tekstu i danych, używane do porównywania danych w dwóch komórkach. Jeśli dane są takie same, funkcja zwraca wartość TRUE; jeśli dane nie są takie same, funkcja zwraca wartość FALSE."
+  },
+  "FIND": {
+    "a": "( ciąg-1, ciąg-2 [, pozycja-początkowa] )",
+    "d": "Funkcja tekstu i danych, używana do znalezienia określonego podciągu (ciąg-1) w ciągu (ciąg-2), odpowiednia dla języków używających zestawu znaków jednobajtowych (SBCS)."
+  },
+  "FINDB": {
+    "a": "( ciąg-1, ciąg-2 [, pozycja-początkowa]. )",
+    "d": "Funkcje tekstu i danych, używane do znalezienia określonego podciągu (ciąg-1) w ciągu (ciąg-2), używane w językach z zestawami znaków dwubajtowych (DBC), takich jak japoński, chiński, koreański itp."
+  },
+  "FIXED": {
+    "a": "( liczba [, [liczba-dziesiętna] [, pominięcie flagi-przecinków]] )",
+    "d": "unkcje tekstu i danych zwracające tekstową reprezentację liczby zaokrągloną do określonej liczby miejsc dziesiętnych."
+  },
+  "LEFT": {
+    "a": "( string [, liczba-znaki] )",
+    "d": "Funkcje tekstu i danych używane do wyodrębniania podciągów zaczynających się od lewego znaku z określonego ciągu, odpowiednie dla języków używających zestawu znaków jednobajtowych (SBCS)."
+  },
+  "LEFTB": {
+    "a": "( string [, liczba-znaki] )",
+    "d": "Funkcje tekstu i danych używane do wyodrębniania podciągów z lewego znaku w określonym ciągu, odpowiednie dla języków używających zestawów znaków dwubajtowych (DBC), takich jak japoński, chiński i koreański."
+  },
+  "LEN": {
+    "a": "( strunowy )",
+    "d": "Funkcje tekstu i danych, używane do analizy określonego ciągu i zwracania liczby zawartych w nim znaków, odpowiednie dla języków używających zestawu znaków jednobajtowych (SBCS)."
+  },
+  "LENB": {
+    "a": "( strunowy )",
+    "d": "Funkcje tekstu i danych, używane do analizowania określonego ciągu i zwracania liczby zawartych w nim znaków, odpowiednie dla języków używających zestawów znaków dwubajtowych (DBCS), takich jak japoński, chiński i koreański."
+  },
+  "LOWER": {
+    "a": "(tekst)",
+    "d": "Funkcje tekstu i danych do konwersji wielkich liter w wybranych komórkach na małe litery."
+  },
+  "MID": {
+    "a": "( ciąg, pozycja-początkowa, liczba-znaków )",
+    "d": "Funkcje tekstowe i dane, używane do wyodrębniania znaków z określonego ciągu z dowolnej pozycji, odpowiednie dla języków używających zestawów znaków jednobajtowych (SBCS)."
+  },
+  "MIDB": {
+    "a": "( ciąg, pozycja-początkowa, liczba-znaków )",
+    "d": "Funkcje tekstu i danych używane do wyodrębniania znaków z dowolnej pozycji w określonym ciągu, odpowiednie dla języków używających zestawów znaków dwubajtowych (DBCS), takich jak japoński, chiński i koreański."
+  },
+  "NUMBERVALUE": {
+    "a": "( tekst, [, [separator-dziesiętny] [, [separator-grupy]] )",
+    "d": "Funkcje tekstu i danych do konwersji tekstu na liczby w sposób niezależny od ustawień regionalnych."
+  },
+  "PROPER": {
+    "a": "( strunowy )",
+    "d": "Funkcje tekstu i danych używane do konwersji pierwszego znaku każdego słowa na wielkie litery, a wszystkie pozostałe znaki na małe."
+  },
+  "REPLACE": {
+    "a": "( string-1, start-pos, number-chars, string-2 )",
+    "d": "Funkcje tekstu i danych służą do zamiany zestawu znaków na zestaw nowych znaków zgodnie z określoną liczbą znaków i pozycją początkową. Jest to odpowiednie dla języków używających zestawu znaków jednobajtowych (SBCS)."
+  },
+  "REPLACEB": {
+    "a": "( string-1, start-pos, number-chars, string-2 )",
+    "d": "Funkcje tekstu i danych służą do zastępowania zestawu znaków zestawem nowych znaków zgodnie z określoną liczbą znaków i pozycją początkową. Są odpowiednie dla języków używających zestawu znaków dwubajtowych (DBC), takich jak japoński, chiński i koreański."
+  },
+  "REPT": {
+    "a": "(tekst, liczba_czasów)",
+    "d": "Funkcje tekstu i danych, używane do powtarzania tekstu określoną liczbę razy."
+  },
+  "RIGHT": {
+    "a": "( string [, liczba-znaki] )",
+    "d": "Funkcje tekstu i danych służą do wyodrębniania podciągów z ciągu znaków, zaczynając od skrajnego prawego znaku zgodnie z określoną liczbą znaków. Jest to odpowiednie dla języków używających zestawu znaków jednobajtowych (SBCS)."
+  },
+  "RIGHTB": {
+    "a": "( string [, liczba-znaki] )",
+    "d": "Funkcje tekstu i danych służą do wyodrębniania podciągów z ciągu znaków, zaczynając od znaku znajdującego się najbardziej po prawej stronie, zgodnie z określoną liczbą znaków. Są one odpowiednie dla języków używających zestawów znaków dwubajtowych (DBC), takich jak japoński, chiński i koreański."
+  },
+  "SEARCH": {
+    "a": "( ciąg-1, ciąg-2 [, pozycja-początkowa] )",
+    "d": "Funkcje tekstu i danych, używane do zwracania pozycji określonego podciągu w ciągu, odpowiednie dla języków używających zestawu znaków jednobajtowych (SBCS)."
+  },
+  "SEARCHB": {
+    "a": "( ciąg-1, ciąg-2 [, pozycja-początkowa] )",
+    "d": "Funkcje tekstu i danych używane do zwracania pozycji określonego podciągu w ciągu, odpowiednie dla języków używających zestawów znaków dwubajtowych (DBC), takich jak japoński, chiński i koreański."
+  },
+  "SUBSTITUTE": {
+    "a": "( ciąg, stary-ciąg, nowy-ciąg [, wystąpienie] )",
+    "d": "Funkcja tekstu i danych, używana do zamiany starego_tekstu na nowy_tekst w ciągu tekstowym."
+  },
+  "T": {
+    "a": "( wartość )",
+    "d": "Funkcje tekstu i danych do sprawdzania, czy wartość w komórce (lub jako parametr) jest tekstem. Jeśli nie jest tekstem, funkcja zwraca pusty wynik. Jeśli wartość / parametr jest tekstem, funkcja zwraca tę samą wartość tekstową."
+  },
+  "TEXT": {
+    "a": "( wartość, format )",
+    "d": "Funkcje tekstu i danych, używane do konwersji wartości na tekst w określonym formacie."
+  },
+  "TRIM": {
+    "a": "( strunowy )",
+    "d": "Funkcje tekstu i danych, używane do usuwania spacji przed i po ciągu."
+  },
+  "UPPER": {
+    "a": "(tekst)",
+    "d": "Funkcje tekstu i danych do konwersji małych liter w wybranych komórkach na wielkie."
+  },
+  "VALUE": {
+    "a": "( strunowy )",
+    "d": "Funkcje tekstowe i danych, używane do konwersji wartości tekstowych reprezentujących liczby na liczby. Jeśli przekonwertowany tekst nie jest liczbą, funkcja zwróci wartość błędu #ARG !."
+  },
+  "AVEDEV": {
+    "a": "( lista argumentów)",
+    "d": "Funkcja statystyczna, używana do zwracania średniej wartości bezwzględnego odchylenia ze zbioru punktów danych do jego średniej arytmetycznej."
+  },
+  "AVERAGE": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna służąca do zwracania średniej wartości (średniej arytmetycznej) parametrów."
+  },
+  "AVERAGEA": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do obliczania średniej wartości (średniej arytmetycznej) wartości z listy parametrów. Funkcja AVERAGEA traktuje tekst i FALSE jako wartość 0, a TRUE jako wartość 1."
+  },
+  "AVERAGEIF": {
+    "a": "( zakres komórek, kryteria wyboru [, zakres średni] )",
+    "d": "Funkcja statystyczna służąca do zwracania średniej wartości (średniej arytmetycznej) wszystkich komórek spełniających dany warunek na określonym obszarze."
+  },
+  "AVERAGEIFS": {
+    "a": "( zakres średni, zakres-kryteriów-1, kryterium-1 [zakres-kryteriów-2, kryterium-2], ... )",
+    "d": "Funkcja statystyczna używana do zwracania średniej wartości (średniej arytmetycznej) wszystkich komórek, które spełniają wiele warunków."
+  },
+  "BETADIST": {
+    "a": " ( x, alfa, beta, [, [A] [, [B]] ) ",
+    "d": "Funkcja statystyczna, używana do zwracania skumulowanej funkcji gęstości prawdopodobieństwa beta."
+  },
+  "BETA.DIST": {
+    "a": " ( x, alfa, beta, skumulowane, [, [A] [, [B]] ) ",
+    "d": "Funkcja statystyczna zwracająca skumulowany rozkład beta."
+  },
+  "BETA.INV": {
+    "a": " ( prawdopodobieństwo, alfa, beta, [, [A] [, [B]] ) ",
+    "d": "Funkcja statystyczna, zwraca funkcję odwrotną skumulowanej funkcji gęstości prawdopodobieństwa beta określonego rozkładu beta."
+  },
+  "BINOMDIST": {
+    "a": "( liczba sukcesów, liczba prób, prawdopodobieństwo sukcesu, flaga kumulacji )",
+    "d": "Funkcja statystyczna używana do zwracania prawdopodobieństwa rozkładu dwumianowego pojedynczej pozycji."
+  },
+  "BINOM.DIST": {
+    "a": "( liczba-s, próby, prawdopodobieństwo-s, skumulowane )",
+    "d": "Funkcja statystyczna używana do zwracania prawdopodobieństwa rozkładu dwumianowego pojedynczej pozycji."
+  },
+  "BINOM.INV": {
+    "a": "( próby, prawdopodobieństwo-s, alfa )",
+    "d": "Funkcja statystyczna używana do zwracania minimalnej wartości skumulowanego rozkładu dwumianowego większej lub równej wartości standardowej."
+  },
+  "CHIDIST": {
+    "a": "( x, stopień wolności )",
+    "d": "Funkcja statystyczna używana do zwracania prawego jednostronnego prawdopodobieństwa rozkładu chi-kwadrat."
+  },
+  "CHIINV": {
+    "a": "( prawdopodobieństwo, stopień swobody )",
+    "d": "Funkcja statystyczna, używana do zwracania funkcji odwrotnej prawego jednostronnego prawdopodobieństwa rozkładu chi-kwadrat."
+  },
+  "CHITEST": {
+    "a": "( zakres rzeczywisty, zakres oczekiwany )",
+    "d": "Funkcja statystyczna używana do zwracania testu niezależności, statystycznej wartości rozkładu chi-kwadrat (χ2) i odpowiednich stopni swobody."
+  },
+  "CHISQ.DIST": {
+    "a": "( x, deg-wolność, skumulowana )",
+    "d": "Funkcja statystyczna używana do zwracania rozkładu chi-kwadrat."
+  },
+  "CHISQ.DIST.RT": {
+    "a": "(x, stopień wolności)",
+    "d": "Funkcja statystyczna używana do zwracania prawego jednostronnego prawdopodobieństwa rozkładu chi-kwadrat."
+  },
+  "CHISQ.INV": {
+    "a": "( prawdopodobieństwo, stopień swobody )",
+    "d": "Funkcja statystyczna, używana do zwracania funkcji odwrotnej lewego jednostronnego prawdopodobieństwa rozkładu chi-kwadrat."
+  },
+  "CHISQ.INV.RT": {
+    "a": "( prawdopodobieństwo, stopień swobody )",
+    "d": "Funkcja statystyczna używana do zwracania funkcji odwrotnej prawdopodobieństwa prawego ogona rozkładu chi-kwadrat."
+  },
+  "CHISQ.TEST": {
+    "a": "( zakres rzeczywisty, zakres oczekiwany )",
+    "d": "Funkcja statystyczna używana do zwracania testu niezależności, statystycznej wartości rozkładu chi-kwadrat (χ2) i odpowiednich stopni swobody."
+  },
+  "CONFIDENCE": {
+    "a": "( alpha, standard-dev, rozmiar )",
+    "d": "Funkcja statystyczna używana do zwracania przedziału ufności."
+  },
+  "CONFIDENCE.NORM": {
+    "a": "( alpha, standard-dev, rozmiar )",
+    "d": "Funkcja statystyczna wykorzystująca rozkład normalny w celu zwrócenia strefy ufności ogólnej średniej."
+  },
+  "CONFIDENCE.T": {
+    "a": "( alpha, standard-dev, rozmiar )",
+    "d": "Funkcja statystyczna korzystająca z rozkładu t-Studenta w celu zwrócenia przedziału ufności dla ogólnej średniej."
+  },
+  "CORREL": {
+    "a": "( tablica-1, tablica-2 )",
+    "d": "Funkcja statystyczna używana do analizy zakresu danych i zwracania współczynnika korelacji dwóch zakresów komórek."
+  },
+  "COUNT": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do zliczania liczby komórek zawierających liczby w wybranej komórce, z wyjątkiem pustych komórek lub komórek zawierających tekst."
+  },
+  "COUNTA": {
+    "a": "( lista argumentówt )",
+    "d": "Funkcja statystyczna używana do analizy zakresu komórek i zliczania liczby komórek, które nie są puste."
+  },
+  "COUNTBLANK": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do analizy zakresu komórek i zwracania liczby pustych komórek."
+  },
+  "COUNTIF": {
+    "a": "( zakres komórek, kryteria wyboru )",
+    "d": "Funkcja statystyczna służąca do obliczania liczby wybranych komórek zgodnie z określonymi warunkami."
+  },
+  "COUNTIFS": {
+    "a": "( kryteria-zakres-1, kryteria-1, [kryteria-zakres-2, kryteria-2], ... )",
+    "d": "Funkcja statystyczna używana do obliczania liczby wybranych komórek na podstawie wielu kryteriów."
+  },
+  "COVAR": {
+    "a": "( tablica-1, tablica-2)",
+    "d": "Funkcja statystyczna używana do zwracania kowariancji dwóch zakresów danych."
+  },
+  "COVARIANCE.P": {
+    "a": "( tablica-1, tablica-2 )",
+    "d": "Funkcja statystyczna używana do zwracania całkowitej kowariancji, to znaczy średniej iloczynu odchylenia każdej pary punktów danych w dwóch zbiorach danych; użyj kowariancji, aby określić związek między dwoma zestawami danych."
+  },
+  "COVARIANCE.S": {
+    "a": "( tablica-1, tablica-2)",
+    "d": "Funkcja statystyczna używana do zwracania kowariancji próbki, to znaczy średniej iloczynu odchyleń każdej pary punktów danych w dwóch zbiorach danych."
+  },
+  "CRITBINOM": {
+    "a": "( liczba prób, prawdopodobieństwo sukcesu, alfa )",
+    "d": "Funkcja statystyczna, zwraca minimalną wartość skumulowanego rozkładu dwumianowego większą lub równą określonej wartości alfa."
+  },
+  "DEVSQ": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna zwraca sumę kwadratów różnicy (odchylenia danych) między każdym punktem danych a punktem średniej danych."
+  },
+  "EXPONDIST": {
+    "a": "( x, lambda, flaga-kumulatywna )",
+    "d": "Funkcja statystyczna używana do zwracania rozkładu wykładniczego."
+  },
+  "EXPON.DIST": {
+    "a": "( x, lambda, skumulowane )",
+    "d": "Funkcja statystyczna zwracająca rozkład wykładniczy。"
+  },
+  "FDIST": {
+    "a": "( x, stopni-swobody1, stopni-swobody2 )",
+    "d": "Funkcja statystyczna zwracająca (prawostronny) rozkład prawdopodobieństwa F (stopień zmiany) dwóch zestawów danych. Użyj tej funkcji, aby określić, czy istnieją różnice w stopniu zmiany między dwoma zestawami danych."
+  },
+  "FINV": {
+    "a": "( prawdopodobieństwo, stopień-wolności1, stopień-wolności2 )",
+    "d": "Funkcja statystyczna używana do zwracania odwrotnej wartości funkcji rozkładu prawdopodobieństwa (prawego ogona). W teście F można użyć rozkładu F, aby porównać stopień zmiany w dwóch zestawach danych."
+  },
+  "F.DIST": {
+    "a": "( x, deg-wolność1, deg-wolność2, skumulowana )",
+    "d": "Funkcja statystyczna używana do zwracania wartości funkcji rozkładu prawdopodobieństwa F. Użyj tej funkcji, aby określić, czy istnieją różnice w stopniu zmiany między dwoma zestawami danych."
+  },
+  "F.DIST.RT": {
+    "a": "( x, stopni-swobody1, stopni-swobody2 )",
+    "d": "Funkcja statystyczna używana do zwracania (prawostronnego) rozkładu prawdopodobieństwa F (stopnia zmiany) dwóch zestawów danych. Użyj tej funkcji, aby określić, czy dwa zestawy danych mają różne stopnie zmian。"
+  },
+  "F.INV": {
+    "a": "( prawdopodobieństwo, stopień-wolności1, stopień-wolności2 )",
+    "d": "Funkcja statystyczna używana do zwracania odwrotnej wartości funkcji rozkładu prawdopodobieństwa F. W teście F można użyć rozkładu F, aby porównać stopień zmiany w dwóch zestawach danych."
+  },
+  "F.INV.RT": {
+    "a": "( prawdopodobieństwo, stopień-wolności1, stopień-wolności2 )",
+    "d": "Funkcja statystyczna używana do zwracania odwrotnej wartości funkcji rozkładu prawdopodobieństwa (prawego ogona). W teście F można użyć rozkładu F, aby porównać stopień zmiany w dwóch zestawach danych."
+  },
+  "FISHER": {
+    "a": "( liczba )",
+    "d": "Funkcja statystyczna, używana do zwracania wartości liczby transformacji Fishera."
+  },
+  "FISHERINV": {
+    "a": "( liczba )",
+    "d": "Funkcja statystyczna używana do zwracania odwrotnej wartości transformaty Fishera."
+  },
+  "FORECAST": {
+    "a": "( x, tablica-1, tablica-2 )",
+    "d": "Funkcje statystyczne, używane do obliczania lub przewidywania przyszłych wartości na podstawie istniejących wartości."
+  },
+  "FORECAST.LINEAR": {
+    "a": "( x, znane_y, znane_x )",
+    "d": "Funkcje statystyczne, używane do obliczania lub przewidywania przyszłych wartości na podstawie istniejących wartości. Przewidywana wartość to wartość y uzyskana po podaniu wartości x. Znane wartości to istniejące wartości x i y, a nowe wartości są przewidywane za pomocą regresji liniowej."
+  },
+  "FREQUENCY": {
+    "a": "(  tablica-danych, tablica-bins )",
+    "d": "Funkcja statystyczna używana do obliczania częstotliwości wartości w pewnym zakresie, a następnie zwracania pionowej tablicy liczb."
+  },
+  "GAMMA": {
+    "a": "( liczba )",
+    "d": "Funkcja statystyczna używana do zwracania wartości funkcji gamma"
+  },
+  "GAMMADIST": {
+    "a": "(x, alfa, beta, skumulowane )",
+    "d": "Funkcja statystyczna używana do zwracania wartości funkcji rozkładu gamma."
+  },
+  "GAMMA.DIST": {
+    "a": "( x, alfa, beta, skumulowane )",
+    "d": "Funkcja statystyczna używana do zwracania wartości funkcji rozkładu gamma."
+  },
+  "GAMMAINV": {
+    "a": "( prawdopodobieństwo, alfa, beta )",
+    "d": "Funkcja statystyczna używana do zwracania odwrotnej wartości skumulowanej funkcji rozkładu gamma."
+  },
+  "GAMMA.INV": {
+    "a": "( prawdopodobieństwo, alfa, beta )",
+    "d": "Funkcja statystyczna używana do zwracania odwrotnej wartości skumulowanej funkcji rozkładu gamma."
+  },
+  "GAMMALN": {
+    "a": "( liczba )",
+    "d": "Funkcja statystyczna używana do zwracania logarytmu naturalnego funkcji gamma. "
+  },
+  "GAMMALN.PRECISE": {
+    "a": "( x )",
+    "d": "Funkcja statystyczna używana do zwracania logarytmu naturalnego funkcji gamma."
+  },
+  "GAUSS": {
+    "a": "( z )",
+    "d": "Funkcja statystyczna używana do obliczania prawdopodobieństwa, żeczłonek standardowej populacji normalnej znajduje się między średnią a z razy odchylenie standardowe średniej."
+  },
+  "GEOMEAN": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do zwracania zestawu dodatnich danych lub średniej geometrycznej dodatniego obszaru danych."
+  },
+  "HARMEAN": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do zwracania średniej harmonicznej zbioru danych."
+  },
+  "HYPGEOMDIST": {
+    "a": "( sukcesy próby, liczba prób, sukcesy populacji, populacja liczbowa)",
+    "d": "unkcja statystyczna używana do zwracania rozkładu hipergeometrycznego. Jeśli wielkość próby, całkowita liczba sukcesów i wielkość populacji są znane, zwracane jest prawdopodobieństwo, że próba osiągnie znaną liczbę sukcesów."
+  },
+  "INTERCEPT": {
+    "a": "( tablica-1, tablica-2 )",
+    "d": "Funkcja statystyczna wykorzystująca znaną wartość x i wartość y do obliczenia przecięcia linii prostej i osi y。"
+  },
+  "KURT": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do zwracania wartości szczytowej zestawu danych."
+  },
+  "LARGE": {
+    "a": "(  tablica, k)",
+    "d": "Funkcja statystyczna używana do zwracania k-tej największej wartości w zestawie danych."
+  },
+  "LOGINV": {
+    "a": "( x, średnia, odchylenie standardowe )",
+    "d": "Funkcja statystyczna używana do zwracania odwrotnej wartości logarytmicznej skumulowanej funkcji rozkładu x, gdzie ln (x) jest rozkładem normalnym zależnym od parametrów średnia i odchylenie standardowe."
+  },
+  "LOGNORM.DIST": {
+    "a": "( x, średnia, odchylenie standardowe, skumulowana )",
+    "d": "Funkcja statystyczna używana do zwracania funkcji rozkładu logarytmicznego x, gdzie ln (x) jest rozkładem normalnym z parametrami Średnia i Odch_standardowe."
+  },
+  "LOGNORM.INV": {
+    "a": "( prawdopodobieństwo, średnia, odchylenie standardowe )",
+    "d": "Funkcja statystyczna, używana do zwracania wartości odwrotnej logarytmicznej skumulowanej funkcji rozkładu x, gdzie ln (x) jest rozkładem normalnym podlegającym parametrom Średnia i Odch_standardowe."
+  },
+  "LOGNORMDIST": {
+    "a": "( x, średnia, odchylenie standardowe)",
+    "d": "Funkcja statystyczna używana do zwracania wartości skumulowanego logarytmu rozkładu x, gdzie ln (x) jest rozkładem normalnym zależnym od parametrów średnia i odchylenie standardowe."
+  },
+  "MAX": {
+    "a": "(liczba1, liczba2, ...)",
+    "d": "Funkcja statystyczna używana do zwracania maksymalnej wartości w zbiorze wartości."
+  },
+  "MAXA": {
+    "a": "(liczba1, liczba2, ...)",
+    "d": "Funkcja statystyczna, używana do zwracania maksymalnej wartości na liście parametrów."
+  },
+  "MEDIAN": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do zwracania wartości mediany zbioru znanych liczb."
+  },
+  "MIN": {
+    "a": "(liczba1, liczba2, ...)",
+    "d": "Funkcja statystyczna używana do zwracania najmniejszej wartości ze zbioru wartości."
+  },
+  "MINA": {
+    "a": "(liczba1, liczba2, ...)",
+    "d": "Funkcja statystyczna używana do zwracania minimalnej wartości na liście parametrów."
+  },
+  "MODE": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do zwracania najczęściej występującej wartości w zestawie danych lub obszarze danych."
+  },
+  "MODE.MULT": {
+    "a": "( liczba1, [, liczba2] ... )",
+    "d": "Funkcja statystyczna używana do zwracania pionowej tablicy najczęściej występujących lub powtarzających się wartości w zestawie danych lub obszarze danych."
+  },
+  "MODE.SNGL": {
+    "a": "( liczba1, [, liczba2] ... )",
+    "d": "Funkcja statystyczna używana do zwracania najczęściej występujących wartości w tablicy lub obszarze danych."
+  },
+  "NEGBINOM.DIST": {
+    "a": "( liczba-f, liczba-s, prawdopodobieństwo-s, skumulowana )",
+    "d": "Funkcja statystyczna używana do zwracania ujemnego rozkładu dwumianowego, to znaczy, gdy prawdopodobieństwo sukcesu wynosi Prawdopodobieństwo_s, prawdopodobieństwo niepowodzeń Liczba_f przed sukcesami Liczba_s."
+  },
+  "NEGBINOMDIST": {
+    "a": "( liczba porażek, liczba sukcesów, prawdopodobieństwo sukcesu )",
+    "d": "Funkcja statystyczna używana do zwracania ujemnego rozkładu dwumianowego."
+  },
+  "NORM.DIST": {
+    "a": "(x, średnia, odchylenie standardowe, skumulowana )",
+    "d": "Funkcja statystyczna używana do zwracania funkcji rozkładu normalnego określonej średniej i odchylenia standardowego."
+  },
+  "NORMDIST": {
+    "a": "( x, średnia, odchylenie standardowe, flaga-skumulowana )",
+    "d": "Funkcja statystyczna używana do zwracania funkcji rozkładu normalnego określonej średniej i odchylenia standardowego."
+  },
+  "NORM.INV": {
+    "a": "( prawdopodobieństwo, średnia, odchylenie standardowe )",
+    "d": "Funkcja statystyczna używana do zwracania odwrotnej wartości normalnej skumulowanej funkcji rozkładu z określoną średnią i odchyleniem standardowym."
+  },
+  "NORMINV": {
+    "a": "(x, średnia, odchylenie standardowe )",
+    "d": "Funkcja statystyczna używana do zwracania odwrotnej wartości normalnej skumulowanej funkcji rozkładu z określoną średnią i odchyleniem standardowym."
+  },
+  "NORM.S.DIST": {
+    "a": "(z, skumulowany )",
+    "d": "Funkcja statystyczna używana do zwracania standardowej funkcji rozkładu normalnego (rozkład ma średnią wartość 0 i odchylenie standardowe 1)."
+  },
+  "NORMSDIST": {
+    "a": "( liczba )",
+    "d": "Funkcja statystyczna używana do zwracania wartości funkcji standardowej skumulowanej funkcji rozkładu normalnego."
+  },
+  "NORM.S.INV": {
+    "a": "( prawdopodobieństwo )",
+    "d": "Funkcja statystyczna używana do zwracania wartości odwrotnej do standardowej normalnej skumulowanej funkcji rozkładu. Średnia tego rozkładu wynosi 0, a odchylenie standardowe to 1."
+  },
+  "NORMSINV": {
+    "a": "( prawdopodobieństwo )",
+    "d": "Funkcja statystyczna używana do zwracania wartości odwrotnej do standardowej normalnej skumulowanej funkcji rozkładu."
+  },
+  "PEARSON": {
+    "a": "( tablica-1, tablica-2 )",
+    "d": "Funkcja statystyczna używana do zwracania współczynnika korelacji momentu iloczynu Pearsona r."
+  },
+  "PERCENTILE": {
+    "a": "(  tablica, k )",
+    "d": "Funkcja statystyczna używana do zwracania wartości k-tego percentyla wartości w obszarze."
+  },
+  "PERCENTILE.EXC": {
+    "a": "(  tablica, k )",
+    "d": "Funkcja statystyczna używana do zwracania wartości k-tego percentyla wartości w obszarze, gdzie k wynosi od 0 do 1, od 0 do 1."
+  },
+  "PERCENTILE.INC": {
+    "a": "(  tablica, k )",
+    "d": "Funkcja statystyczna używana do zwracania wartości percentyla K wartości w obszarze. K to wartość percentyla z zakresu od 0 do 1, w tym od 0 do 1."
+  },
+  "PERCENTRANK": {
+    "a": "( tablica, k )",
+    "d": "Funkcja statystyczna używana do zwracania rankingu określonej wartości w zbiorze danych jako wartości procentowej zbioru danych. "
+  },
+  "PERCENTRANK.EXC": {
+    "a": "( tablica, x [, znaczenie] )",
+    "d": "Funkcja statystyczna używana do zwracania rankingu procentowego (od 0 do 1, z wyłączeniem 0 i 1) określonej wartości w zbiorze danych."
+  },
+  "PERCENTRANK.INC": {
+    "a": "( tablica, x [, znaczenie] )",
+    "d": "Funkcja statystyczna używana do zwracania rankingu określonej wartości w zbiorze danych jako procentowej wartości zbioru danych. Wartość procentowa w tym miejscu mieści się w zakresie od 0 do 1 (w tym 0 i 1)."
+  },
+  "PERMUT": {
+    "a": "( numer, wybrany numer )",
+    "d": "Funkcja statystyczna używana do zwracania liczby permutacji określonej liczby obiektów, które można wybrać z obiektów cyfrowych."
+  },
+  "PERMUTATIONA": {
+    "a": "( numer, wybrany numer )",
+    "d": "Funkcja statystyczna, służąca do zwracania liczby permutacji danej liczby obiektów (w tym powtórzeń), które można wybrać z łącznej liczby obiektów."
+  },
+  "PHI": {
+    "a": "( x )",
+    "d": "Funkcja statystyczna używana do zwracania wartości funkcji gęstości standardowego rozkładu normalnego."
+  },
+  "POISSON": {
+    "a": "( x, średnia, flaga-skumulowana )",
+    "d": "Funkcja statystyczna używana do zwracania rozkładu Poissona."
+  },
+  "POISSON.DIST": {
+    "a": "( x, średnia, skumulowana )",
+    "d": "Funkcja statystyczna używana do zwracania rozkładu Poissona. Powszechnym zastosowaniem rozkładu Poissona jest przewidywanie liczby zdarzeń w określonym przedziale czasu, na przykład liczby samochodów przyjeżdżających na płatny parking w ciągu 1 minuty."
+  },
+  "PROB": {
+    "a": "( zakres x, zakres prawdopodobieństwa, granica dolna [, granica górna] )",
+    "d": "Funkcja statystyczna, używana do zwracania prawdopodobieństwa, żewartość w obszarze mieści się w określonym przedziale."
+  },
+  "QUARTILE": {
+    "a": "(  tablica, kategoria-wynikowa )",
+    "d": "Funkcja statystyczna używana do zwracania kwartylu zbioru danych."
+  },
+  "QUARTILE.INC": {
+    "a": "(  tablica, kwart )",
+    "d": "Funkcja statystyczna zwracająca kwartyl zbioru danych na podstawie wartości percentyla z przedziału od 0 do 1 (w tym od 0 do 1)."
+  },
+  "QUARTILE.EXC": {
+    "a": "(  tablica, kwart  )",
+    "d": "Funkcja statystyczna zwracająca kwartyl zbioru danych na podstawie wartości percentyla z przedziału od 0 do 1 (z wyłączeniem 0 i 1)."
+  },
+  "RANK": {
+    "a": "( number, ref [, order] )",
+    "d": "Funkcja statystyczna używana do zwracania pozycji listy liczb. Ranga liczby to jej rozmiar w stosunku do innych wartości na liście (jeśli lista ma być posortowana, jako jej pozycji można użyć rangi numeru)。"
+  },
+  "RANK.AVG": {
+    "a": "( number , ref [ , order ] )",
+    "d": "Funkcja statystyczna używana do zwracania rangi listy liczb: ranga liczby to stosunek jej rozmiaru do innych wartości na liście; jeśli wiele wartości ma tę samą rangę, zostanie zwrócona średnia ranga。"
+  },
+  "RANK.EQ": {
+    "a": "( number , ref [ , order ] )",
+    "d": "Funkcja statystyczna używana do zwracania pozycji listy liczb. Jego rozmiar jest powiązany z innymi wartościami na liście; jeśli wiele wartości ma tę samą rangę, zwracana jest najwyższa ranga zestawu wartości."
+  },
+  "RSQ": {
+    "a": "( tablica-1, tablica-2 )",
+    "d": "Funkcja statystyczna, używana do zwracania kwadratu współczynnika korelacji momentu iloczynu Pearsona."
+  },
+  "SKEW": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do zwracania skośności rozkładu."
+  },
+  "SKEW.P": {
+    "a": "( numer-1 [, numer 2],… )",
+    "d": "Funkcja statystyczna używana do zwracania asymetrii rozkładu na podstawie populacji próbki: wskazująca na asymetrię rozkładu względem średniej."
+  },
+  "SLOPE": {
+    "a": "( tablica-1, tablica-2 )",
+    "d": "Funkcja statystyczna używana do zwracania nachylenia linii regresji liniowej punktów danych w dwóch zbiorach danych."
+  },
+  "SMALL": {
+    "a": "(  tablica, k )",
+    "d": "Funkcja statystyczna używana do zwracania k-tej minimalnej wartości w zestawie danych."
+  },
+  "STANDARDIZE": {
+    "a": "( x, średnia, odchylenie standardowe )",
+    "d": "Funkcja statystyczna zwracająca znormalizowaną wartość rozkładu reprezentowaną przez średnią i odchylenie standardowe."
+  },
+  "STDEV": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do oszacowania odchylenia standardowego na podstawie próby."
+  },
+  "STDEV.P": {
+    "a": "( liczba1 [, liczba2], ... )",
+    "d": "Funkcja statystyczna używana do obliczania odchylenia standardowego na podstawie całej populacji próbek podanej jako parametr (z pominięciem wartości logicznych i tekstu)."
+},
+  "STDEV.S": {
+    "a": "( liczba1 [, liczba2], ... )",
+    "d": "Funkcja statystyczna używana do szacowania odchylenia standardowego na podstawie próbki (ignorowanie wartości logicznych i tekstu w próbce)."
+  },
+  "STDEVA": {
+    "a": "( lista argumentów )",
+    "d": "Funkcje statystyczne służą do szacowania odchylenia standardowego na podstawie danej próbki, obliczane są również wartości tekstowe i logiczne (takie jak PRAWDA lub FAŁSZ)."
+  },
+  "STDEVP": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do zwracania odchylenia standardowego całej populacji próbki."
+  },
+  "STDEVPA": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do zwracania odchylenia standardowego całej populacji próbki."
+  },
+  "STEYX": {
+    "a": "( znane-ys, znane-xs )",
+    "d": "Funkcja statystyczna używana do zwracania błędu standardowego powstałego, gdy wartość y każdego x jest przewidywana za pomocą regresji liniowej."
+  },
+  "TDIST": {
+    "a": "(x, stopień swobody, ogony)",
+    "d": "Funkcja statystyczna używana do zwracania percentyla (prawdopodobieństwa) rozkładu t studenta, gdzie wartość liczbowa (x) jest obliczoną wartością t używaną do obliczenia percentyla. Rozkład t jest używany do testowania hipotez na małych próbkach zbiorów danych. Ta funkcja może być używana zamiast tabeli wartości krytycznych dla rozkładu t."
+  },
+  "TINV": {
+    "a": "( prawdopodobieństwo, deg_freedom )",
+    "d": "Funkcja statystyczna używana do zwracania dwustronnej funkcji odwrotnej rozkładu t-Studenta."
+  },
+  "T.DIST": {
+    "a": "( x, deg-wolność, skumulowana )",
+    "d": "Funkcja statystyczna używana do zwracania lewostronnego rozkładu t studenta. Rozkład t jest używany do testowania hipotez na małych próbkach zbiorów danych. Ta funkcja może być używana zamiast tabeli wartości krytycznych dla rozkładu t."
+  },
+  "T.DIST.2T": {
+    "a": "( x, stopień wolności )",
+    "d": "Funkcja statystyczna używana do zwracania lewostronnego rozkładu t studenta. Rozkład t jest używany do testowania hipotez na małych próbkach zbiorów danych. Ta funkcja może być używana zamiast tabeli wartości krytycznych dla rozkładu t."
+  },
+  "T.DIST.RT": {
+    "a": "( x, stopień wolności )",
+    "d": "Funkcja statystyczna używana do zwracania rozkładu t studenta z prawej strony. Rozkład t jest używany do testowania hipotez na małych próbkach zbiorów danych. Ta funkcja może być używana zamiast tabeli wartości krytycznych dla rozkładu t."
+  },
+  "T.INV": {
+    "a": "( prawdopodobieństwo, stopień swobody)",
+    "d": "Funkcja statystyczna, używana do zwracania odwrotnej funkcji lewostronnej rozkładu t studenta."
+  },
+  "T.INV.2T": {
+    "a": "( prawdopodobieństwo, stopień swobody )",
+    "d": "Funkcja statystyczna używana do zwracania dwustronnej funkcji odwrotnej rozkładu t-Studenta."
+  },
+  "T.TEST": {
+    "a": "( tablica1, tablica2, ogony, typ )",
+    "d": "Funkcja statystyczna używana do zwracania prawdopodobieństwa związanego z testem t-Studenta. Użyj funkcji T.TEST, aby określić, czy dwie próbki mogą pochodzić z dwóch bazowych populacji z tą samą średnią."
+  },
+  "TRIMMEAN": {
+    "a": "( tablica1, tablica2, ogony, typ )",
+    "d": "Funkcja statystyczna używana do zwracania średniej wewnętrznej zbioru danych. TRIMMEAN oblicza średnią wartość uzyskaną po wykluczeniu procentu punktów danych w górnej i dolnej mantysie zbioru danych."
+  },
+  "TTEST": {
+    "a": "( tablica1, tablica2, ogony, typ )",
+    "d": "Funkcja statystyczna używana do zwracania prawdopodobieństwa związanego z testem t-Studenta. Użyj funkcji TTEST, aby określić, czy dwie próbki prawdopodobnie pochodzą z dwóch bazowych populacji z tą samą średnią."
+  },
+  "VAR": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do obliczania wariancji na podstawie danej próbki."
+  },
+  "VAR.P": {
+    "a": "( liczba1 [, liczba2], ... )",
+    "d": "Funkcja statystyczna używana do obliczania wariancji na podstawie całej populacji próbki (z pominięciem wartości logicznych i tekstu w populacji próbki)."
+  },
+  "VAR.S": {
+    "a": "( liczba1 [, liczba2], ... )",
+    "d": "Funkcja statystyczna używana do szacowania wariancji na podstawie próbki (ignorowanie wartości logicznych i tekstu w próbce)."
+  },
+  "VARA": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do obliczania wariancji na podstawie danej próbki."
+  },
+  "VARP": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do obliczania wariancji na podstawie całej populacji."
+  },
+  "VARPA": {
+    "a": "( lista argumentów )",
+    "d": "Funkcja statystyczna używana do obliczania wariancji na podstawie całej populacji."
+  },
+  "WEIBULL": {
+    "a": "( x, alfa, beta, skumulowane )",
+    "d": "Funkcja statystyczna używana do zwracania rozkładu Weibulla. Rozkład ten można wykorzystać do analizy niezawodności, takiej jak obliczanie średniego czasu do awarii sprzętu."
+  },
+  "WEIBULL.BULL": {
+    "a": "( x, alfa, beta, skumulowane )",
+    "d": "Funkcja statystyczna używana do zwracania rozkładu Weibulla. Rozkład ten można wykorzystać do analizy niezawodności, takiej jak obliczanie średniego czasu do awarii sprzętu."
+  },
+  "Z.TEST": {
+    "a": "( tablica, x [, sigma])",
+    "d": "Funkcja statystyczna używana do zwracania jednostronnej wartości prawdopodobieństwa testu z. Dla danej hipotetycznej średniej populacji μ0, ZTEST zwraca prawdopodobieństwo, że średnia próbki jest większa niż obserwowana średnia w zbiorze danych (macierzy), to znaczy obserwowana średnia próbki."
+  },
+  "ZTEST": {
+    "a": "( tablica, x [, sigma] )",
+    "d": "Funkcja statystyczna używana do zwracania jednostronnej wartości prawdopodobieństwa testu z. Dla danej hipotetycznej średniej populacji μ0, ZTEST zwraca prawdopodobieństwo, że średnia próbki jest większa niż obserwowana średnia w zbiorze danych (macierzy), to znaczy obserwowana średnia próbki."
+  },
+  "ACCRINT": {
+    "a": "( emisja, pierwsze oprocentowanie, rozliczenie, stopa, [par], częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa wykorzystywana do zwrotu narosłych odsetek od okresowo oprocentowanych papierów wartościowych."
+  },
+  "ACCRINTM": {
+    "a": "( emisja, rozliczenie, stopa, par, podstawa )",
+    "d": "Funkcja finansowa używana do zwrotu narosłych odsetek od papierów wartościowych, które są oprocentowane w terminie zapadalności."
+  },
+  "AMORDEGRC": {
+    "a": "( koszt, data zakupu, pierwszy okres, odzysk, okres, stawka [, [podstawa]] )",
+    "d": "Funkcja finansowa używana do zwracania wartości amortyzacji z każdego okresu rozliczeniowego."
+  },
+  "AMORLINC": {
+    "a": "( koszt, data zakupu, pierwszy okres, odzysk, okres, stawka [, [podstawa]] )",
+    "d": "Funkcja finansowa używana do zwracania wartości amortyzacji z każdego okresu rozliczeniowego."
+  },
+  "COUPDAYBS": {
+    "a": "( rozliczenie, data_spłaty, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa, służąca do zwracania liczby dni od początku okresu spłaty odsetek do dnia rozliczenia."
+  },
+  "COUPDAYS": {
+    "a": "( rozliczenie, data_spłaty, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa, służąca do zwracania liczby dni w okresie spłaty odsetek w dniu rozliczenia."
+  },
+  "COUPDAYSNC": {
+    "a": "( rozliczenie, data_spłaty, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa, służąca do zwracania liczby dni od daty rozliczenia do następnej daty płatności kuponu."
+  },
+  "COUPNCD": {
+    "a": "( rozliczenie, data_spłaty, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa, służąca do zwracania liczby reprezentującej datę następnej płatności odsetek po dacie rozliczenia."
+  },
+  "COUPNUM": {
+    "a": "( rozliczenie, data_spłaty, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa, służąca do zwracania liczby płatności odsetek między datą rozliczenia a terminem wymagalności, zaokrąglonej w górę do najbliższej liczby całkowitej."
+  },
+  "COUPPCD": {
+    "a": "( rozliczenie, data_spłaty, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa, służąca do zwracania liczby reprezentującej datę ostatniej płatności odsetek przed datą rozliczenia."
+  },
+  "CUMIPMT": {
+    "a": "(rate, nper, pv, start-period, end-period, type )",
+    "d": "Funkcja finansowa, służąca do zwracania skumulowanej kwoty odsetek od pożyczki z danego okresu początkowego do okresu końcowego."
+  },
+  "CUMPRINC": {
+    "a": "( rate, nper, pv, start-period, end-period, type )",
+    "d": "Funkcja finansowa używana do zwrotu skumulowanej kwoty głównej pożyczki z danego okresu początkowego do okresu końcowego."
+  },
+  "DB": {
+    "a": "( koszt, odzysk, żywotność, okres [, [miesiąc]] )",
+    "d": "Funkcja finansowa wykorzystująca metodę stałego malejącego salda do obliczenia wartości amortyzacji środka trwałego w danym okresie."
+  },
+  "DDB": {
+    "a": "( koszt, odzysk, żywotność, okres [, współczynnik] )",
+    "d": "Funkcja finansowa, wykorzystująca metodę podwójnie malejącego salda lub inne określone metody w celu zwrócenia wartości amortyzacji środka trwałego w określonym okresie。"
+  },
+  "DISC": {
+    "a": "( rozliczenie, data_spłaty, cena, wykup [, [podstawa]] )",
+    "d": "Funkcja finansowa używana do zwrotu stopy dyskontowej papierów wartościowych."
+  },
+  "DOLLARDE": {
+    "a": "( dolar ułamkowy, ułamek )",
+    "d": "Funkcja finansowa używana do przeliczania ceny wyrażonej jako część całkowita i część ułamkowa (na przykład 1,02) na cenę wyrażoną w części dziesiętnej. "
+  },
+  "DOLLARFR": {
+    "a": "( dolar dziesiętny, ułamek )",
+    "d": "Funkcje finansowe używane do zamiany miejsc dziesiętnych na wartości ułamkowe, takie jak ceny papierów wartościowych."
+  },
+  "DURATION": {
+    "a": "( rozliczenie, data_spłaty, kupon, yld, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa używana do zwracania okresu budowy Macauleya przy założeniu wartości nominalnej 100 RMB."
+  },
+  "EFFECT": {
+    "a": "( stawka nominalna, np )",
+    "d": "Funkcja finansowa wykorzystuje daną nominalną roczną stopę procentową i liczbę okresów w roku do obliczenia efektywnej rocznej stopy procentowej."
+  },
+  "FV": {
+    "a": "( rate, nper, pmt [, [pv] [, [type]]] )",
+    "d": "Funkcja finansowa, służąca do obliczania przyszłej wartości inwestycji opartej na stałej stopie procentowej."
+  },
+  "FVSCHEDULE": {
+    "a": "( dyrektor, harmonogram )",
+    "d": "Funkcja finansowa, służąca do obliczania przyszłej wartości inwestycji opartej na stałej stopie procentowej."
+  },
+  "INTRATE": {
+    "a": "( ozliczenie, data_spłaty, cena, wykup [, [podstawa]] )",
+    "d": "Funkcja finansowa, służąca do zwrotu stopy procentowej pełnego zabezpieczenia inwestycyjnego."
+  },
+  "IPMT": {
+    "a": "( rate, per, nper, pv [, [fv] [, [typ]]] )",
+    "d": "Funkcja finansowa oparta na stałej stopie procentowej i równych ratach zwraca kwotę spłaty odsetek od inwestycji w ustalonym okresie."
+  },
+  "IRR": {
+    "a": "(wartości [, [przypuszczenie]])",
+    "d": "Funkcja finansowa używana do zwracania wewnętrznej stopy zwrotu serii przepływów pieniężnych reprezentowanych przez liczby w wartości."
+  },
+  "ISPMT": {
+    "a": "( rate, per, nper, pv )",
+    "d": "Funkcja finansowa używana do obliczania odsetek do zapłacenia w określonym okresie inwestycyjnym."
+  },
+  "MDURATION": {
+    "a": "( rozliczenie, data_spłaty, kupon, yld, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa użyta do zwrócenia zmodyfikowanej daty zapadalności według Macauleya papieru wartościowego o hipotetycznej wartości nominalnej 100."
+  },
+  "MIRR": {
+    "a": "( wartości, stopa-finansowa, stopa-reinwestycji )",
+    "d": "Funkcja finansowa zwracająca zmodyfikowaną wewnętrzną stopę zwrotu dla serii okresowych przepływów pieniężnych."
+  },
+  "NOMINAL": {
+    "a": "( współczynnik efektu, npery )",
+    "d": "Funkcja finansowa zwraca nominalną roczną stopę procentową na podstawie podanej faktycznej stopy procentowej i liczby rocznych okresów składania."
+  },
+  "NPER": {
+    "a": "( rate, pmt, pv [, [fv] [, [type]]] )",
+    "d": "Funkcja finansowa oparta na stałej stopie procentowej i metodzie płatności równych rat zwraca całkowitą liczbę okresów dla inwestycji."
+  },
+  "NPV": {
+    "a": "( stopa, lista-argumentów )",
+    "d": "Funkcja finansowa wykorzystująca stopę dyskontową i szereg przyszłych wydatków (wartości ujemne) i zwroty (wartości dodatnie) do obliczenia bieżącej wartości netto inwestycji."
+  },
+  "ODDFPRICE": {
+    "a": "( rozliczenie, data_spłaty, emisja, pierwszy kupon, stopa, rok, wykup, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa używana do zwrotu ceny papieru wartościowego o wartości nominalnej 100 ￥, która nie jest ustalona (długoterminowa lub krótkoterminowa) w pierwszym terminie płatności odsetek。"
+  },
+  "ODDFYIELD": {
+    "a": "( rozliczenie, data_spłaty, emisja, pierwszy kupon, stopa, cena, wykup, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa, służąca do zwrotu stopy zwrotu z papierów wartościowych (długoterminowych lub krótkoterminowych) z nieokreślonym terminem pierwszej płatności odsetek."
+  },
+  "ODDLPRICE": {
+    "a": "( rozliczenie, data_spłaty, ostatnie oprocentowanie, stopa, yld, wykup, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa używana do zwrotu ceny papieru wartościowego (długoterminowego lub krótkoterminowego) o wartości nominalnej 100 ￥, która nie jest ustalona w dniu końcowej płatności odsetek."
+  },
+  "ODDLYIELD": {
+    "a": "( rozliczenie, data_spłaty, ostatnie oprocentowanie, stopa, cena, wykup, częstotliwość [, [podstawa]])",
+    "d": "Funkcja finansowa, służąca do zwrotu stopy zwrotu z papierów wartościowych (długoterminowych lub krótkoterminowych), których ostateczny termin płatności odsetek nie jest określony."
+  },
+  "PMT": {
+    "a": "( rate, nper, pv [, [fv] [, [typ]]] )",
+    "d": "Funkcja finansowa używana do obliczania kwoty spłaty pożyczki na podstawie stałej kwoty płatności i stałej stopy procentowej."
+  },
+  "PPMT": {
+    "a": "( rate, per, nper, pv [, [fv] [, [typ]]] )",
+    "d": "Funkcja finansowa używana do zwrotu spłaty kapitału inwestycji w znanym okresie na podstawie regularnych stałych płatności i stałych stóp procentowych."
+  },
+  "PRICE": {
+    "a": "( rozliczenie, data_spłaty, stopa, yld, wykup, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa używana do zwracania ceny papieru wartościowego o wartości nominalnej 100 i oprocentowanej regularnie."
+  },
+  "PRICEDISC": {
+    "a": "( rozliczenie, data_spłaty, dyskonto, wykup [, [podstawa]] )",
+    "d": "Funkcja finansowa, służąca do zwrotu ceny papierów wartościowych o wartości nominalnej 100 jenów wyemitowanych z dyskontem."
+  },
+  "PRICEMAT": {
+    "a": "( rozliczenie, data_spłaty, emisja, stopa, yld [, [podstawa]] )",
+    "d": "Funkcja finansowa używana do zwracania ceny papieru wartościowego o wartości nominalnej 100, z oprocentowaniem w terminie zapadalności."
+  },
+  "PV": {
+    "a": "(rate, nper, pmt [, [fv] [, [type]]] )",
+    "d": "Funkcja finansowa używana do obliczania bieżącej wartości pożyczki lub inwestycji w oparciu o stałą stopę procentową."
+  },
+  "RATE": {
+    "a": "( nper, pmt, pv [, [ [ fv ] [, [ [ typ ] [, [ przypuszczenie ] ] ] ] ] ] )",
+    "d": "财务函数，用于返回每期年金的利率。"
+  },
+  "RECEIVED": {
+    "a": "( ozliczenie, data_spłaty, lokata, dyskonto [, [podstawa]] )",
+    "d": "Funkcja finansowa, służąca do zwrotu kwoty pieniędzy otrzymanych w terminie zapadalności papieru wartościowego z jednorazową płatnością odsetek."
+  },
+  "SLN": {
+    "a": "( koszt, odzysk, życie )",
+    "d": "Funkcja finansowa, służąca do zwracania amortyzacji liniowej aktywów w okresie."
+  },
+  "SYD": {
+    "a": "( koszt, odzysk, żywotność, za)",
+    "d": "Funkcja finansowa, służąca do zwracania amortyzacji obliczonej na podstawie sumy lat aktywa w określonym okresie."
+  },
+  "TBILLEQ": {
+    "a": "( rozliczenie, zapadalność, dyskonto )",
+    "d": "Funkcja finansowa używana do obliczania ekwiwalentnej stopy zwrotu bonów skarbowych."
+  },
+  "TBILLPRICE": {
+    "a": "( rozliczenie, zapadalność, dyskonto )",
+    "d": "Funkcja finansowa używana do obliczania ceny bonów skarbowych według wartości nominalnej 100 RMB."
+  },
+  "TBILLYIELD": {
+    "a": "( rozliczenie, data_spłaty, pr )",
+    "d": "Funkcja finansowa używana do obliczania rentowności bonów skarbowych."
+  },
+  "VDB": {
+    "a": "( oszt, odzysk, żywotność, okres-początkowy, okres-końcowy [, [[współczynnik] [, [brak-przełącznika]]]]])",
+    "d": "Funkcja finansowa używana do obliczania amortyzacji środka trwałego w określonym lub części przedziału księgowego za pomocą metody zmiennej malejącego salda."
+  },
+  "XIRR": {
+    "a": "( wartości, daty [, [przypuszczenie]] )",
+    "d": "Funkcja finansowa, używana do obliczania wewnętrznej stopy zwrotu serii nieregularnych przepływów pieniężnych."
+  },
+  "XNPV": {
+    "a": "( stopa, wartości, daty  )",
+    "d": "Funkcja finansowa używana do obliczania bieżącej wartości netto inwestycji na podstawie określonej stopy zwrotu i planu nieregularnych płatności."
+  },
+  "YIELD": {
+    "a": "( rozliczenie, data_spłaty, stopa, cena, wykup, częstotliwość [, [podstawa]] )",
+    "d": "Funkcja finansowa używana do obliczania zwrotu z papierów wartościowych, które przynoszą okresowe odsetki."
+  },
+  "YIELDDISC": {
+    "a": "( rozliczenie, data_spłaty, cena, wykup, [, [podstawa]] )",
+    "d": "Funkcja finansowa stosowana do obliczania rocznej rentowności papierów wartościowych z dyskontem."
+  },
+  "YIELDMAT": {
+    "a": "( rozliczenie, data_spłaty, emisja, stopa, pr [, [podstawa]] )",
+    "d": "Funkcja finansowa stosowana do obliczania rocznej rentowności oprocentowanych papierów wartościowych w terminie zapadalności."
+  },
+  "ABS": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do zwracania wartości bezwzględnej liczby."
+  },
+  "ACOS": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zwracania łuku cosinusa liczby."
+  },
+  "ACOSH": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania odwrotnego cosinusa hiperbolicznego danej liczby."
+  },
+  "ACOT": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do zwracania głównej wartości cotangensu łuku (odwrotności cotangens) liczby."
+  },
+  "ACOTH": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania odwrotnego cotangensu hiperbolicznego liczby."
+  },
+  "ARABIC": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do konwersji liczb rzymskich na cyfry arabskie."
+  },
+  "ASIN": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania łuku sinusoidalnego liczby."
+  },
+  "ASINH": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania odwrotnego sinusa hiperbolicznego liczby."
+  },
+  "ATAN": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zwracania stycznej łuku liczby."
+  },
+  "ATAN2": {
+    "a": "( x, y )",
+    "d": "unkcje matematyczne i trygonometryczne używane do zwracania stycznej łuku osi X i Y."
+  },
+  "ATANH": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania odwrotnej tangensa hiperbolicznego liczby."
+  },
+  "BASE": {
+    "a": "( liczba, podstawa [, minimalna długość])",
+    "d": "Zamień liczbę na tekstową reprezentację o danej podstawie."
+  },
+  "CEILING": {
+    "a": "( x, znaczenie )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zaokrąglania liczb w górę do najbliższej wielokrotności."
+  },
+  "CEILING.MATH": {
+    "a": "( x [, [istotność] [, [tryb]] )",
+    "d": "unkcje matematyczne i trygonometryczne używane do zaokrąglania liczb do najbliższej liczby całkowitej lub wielokrotności."
+  },
+  "CEILING.PRECISE": {
+    "a": "( x [, znaczenie] )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania liczby zaokrąglonej w górę do najbliższej liczby całkowitej lub wielokrotności."
+  },
+  "COMBIN": {
+    "a": "( numer, wybrany numer )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zwracania liczby kombinacji danej liczby elementów."
+  },
+  "COMBINA": {
+    "a": "( numer, wybrany numer )",
+    "d": "Funkcje matematyczne i trygonometryczne, służące do zwracania liczby kombinacji danej liczby elementów (w tym powtórzeń)."
+  },
+  "COS": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zwracania cosinusa kąta."
+  },
+  "COSH": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania cosinusa hiperbolicznego liczby."
+  },
+  "COT": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania cotangensa kąta wyrażonego w radianach."
+  },
+  "COTH": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania cotangensu hiperbolicznego kąta hiperbolicznego."
+  },
+  "CSC": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania cosecansa kąta."
+  },
+  "CSCH": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania hiperbolicznego cosecansa kąta."
+  },
+  "DECIMAL": {
+    "a": "( tekst, podstawa)",
+    "d": "amień tekstową reprezentację liczby na liczbę dziesiętną o danej podstawie."
+  },
+  "DEGREES": {
+    "a": "( kąt )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zamiany radianów na kąty。"
+  },
+  "EVEN": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zaokrąglania liczb do najbliższej parzystej liczby całkowitej."
+  },
+  "EXP": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do powrotu e do n-tej potęgi. Stała e jest równa 2,71828182845904."
+  },
+  "FACT": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do zwracania silni liczby."
+  },
+  "FACTDOUBLE": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania podwójnej silni liczby."
+  },
+  "FLOOR": {
+    "a": "( x, znaczenie )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zaokrąglania liczb w dół do najbliższej wielokrotności."
+  },
+  "FLOOR.PRECISE": {
+    "a": "( x, znaczenie )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania liczby zaokrąglonej w dół do najbliższej liczby całkowitej lub wielokrotności."
+  },
+  "FLOOR.MATH": {
+    "a": "( x, znaczenie )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zaokrąglania liczb w dół do najbliższej liczby całkowitej lub wielokrotności."
+  },
+  "GCD": {
+    "a": "( lista argumentów )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania największego wspólnego dzielnika dwóch lub więcej liczb całkowitych."
+  },
+  "INT": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zaokrąglania liczb w dół do najbliższej liczby całkowitej."
+  },
+  "ISO.CEILING": {
+    "a": "( liczba [, znaczenie] )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania liczby zaokrąglonej w górę do najbliższej liczby całkowitej lub wielokrotności. Jeśli liczba lub wielokrotność wynosi zero, zwracane jest zero."
+  },
+  "LCM": {
+    "a": "( lista argumentów )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania najmniejszej wspólnej wielokrotności jednej lub więcej liczb."
+  },
+  "LN": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do zwracania logarytmu naturalnego liczby."
+  },
+  "LOG": {
+    "a": "( x [, podstawa] )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania logarytmu liczby opartej na określonej podstawie."
+  },
+  "LOG10": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania logarytmu liczby o podstawie 10."
+  },
+  "MDETERM": {
+    "a": "( szyk )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania wartości wyznacznika macierzy tablicy."
+  },
+  "MINVERSE": {
+    "a": "( szyk )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zwracania odwrotnej macierzy danej macierzy i wyświetlania pierwszej wartości zwracanej tablicy liczb."
+  },
+  "MMULT": {
+    "a": "( tablica1, tablica2 )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania iloczynu macierzy dwóch tablic i wyświetlania pierwszej wartości zwróconej tablicy liczbowej."
+  },
+  "MOD": {
+    "a": "( x, y )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zwracania reszty z dzielenia dwóch liczb."
+  },
+  "MROUND": {
+    "a": "( x, wielokrotność)",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zaokrąglania liczb do wymaganej wielokrotności."
+  },
+  "MULTINOMIAL": {
+    "a": "( lista argumentów )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania stosunku silni sumy parametrów do iloczynu silni każdego parametru. "
+  },
+  "ODD": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zaokrąglania liczb w górę do najbliższej nieparzystej liczby całkowitej."
+  },
+  "PI": {
+    "a": "()",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania stałej matematycznej pi równej 3,14159265358979. Żadne parametry nie są wymagane."
+  },
+  "POWER": {
+    "a": "( x, y )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania wyniku potęgi liczby."
+  },
+  "PRODUCT": {
+    "a": "( lista argumentów )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do mnożenia wszystkich liczb w wybranym zakresie komórek i zwracania iloczynu. "
+  },
+  "QUOTIENT": {
+    "a": "( dywidenda, dzielnik )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zwracania części całkowitej ilorazu."
+  },
+  "RADIANS": {
+    "a": "( kąt )",
+    "d": "Funkcje matematyczne i trygonometryczne służące do zamiany stopni na radiany."
+  },
+  "RAND": {
+    "a": "()",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania liczby losowej większej lub równej 0 i mniejszej niż 1. Żadne parametry nie są wymagane."
+  },
+  "RANDBETWEEN": {
+    "a": "( Dolna granica, górna granica)",
+    "d": "Funkcje matematyczne i trygonometryczne służą do zwracania liczby losowej większej lub równej dolnej granicy i mniejszej lub równej górnej granicy."
+  },
+  "ROMAN": {
+    "a": "( numer, forma )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do zamiany liczb arabskich na rzymskie w formie tekstowej."
+  },
+  "ROUND": {
+    "a": "( x, liczba-cyfry )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zaokrąglania liczb do określonych cyfr."
+  },
+  "ROUNDDOWN": {
+    "a": "( x, liczba-cyfry )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do zaokrąglania liczb w dół do określonej liczby cyfr w kierunku zera."
+  },
+  "ROUNDUP": {
+    "a": "( x, liczba-cyfry )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zaokrągleń liczb od 0 do określonej liczby cyfr."
+  },
+  "SEC": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zwracania siecznego kąta."
+  },
+  "SECH": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania hiperbolicznego siecznego kąta."
+  },
+  "SERIESSUM": {
+    "a": "( wartość wejściowa, moc początkowa, krok, współczynniki )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania sumy szeregów potęg."
+  },
+  "SIGN": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania symboli liczbowych. Jeśli liczba jest dodatnia, funkcja zwraca 1; jeśli liczba jest ujemna, funkcja zwraca -1; jeśli liczba wynosi 0, funkcja zwraca 0."
+  },
+  "SIN": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania sinusa kąta."
+  },
+  "SINH": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania sinusa hiperbolicznego liczby."
+  },
+  "SQRT": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do zwracania pierwiastka kwadratowego z liczby."
+  },
+  "SQRTPI": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania pierwiastka kwadratowego iloczynu liczby i stałej pi (3,14159265358979)."
+  },
+  "SUBTOTAL": {
+    "a": "( numer funkcji, lista argumentów )",
+    "d": "wróć sumy częściowe na liście lub w bazie danych."
+  },
+  "SUM": {
+    "a": "( lista argumentów )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do dodawania wszystkich liczb w wybranym zakresie komórek i zwracania wyniku."
+  },
+  "SUMIF": {
+    "a": "( zakres komórek, kryteria wyboru [, zakres-sumy] )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do dodawania wszystkich liczb w wybranym zakresie komórek zgodnie z określonymi warunkami i zwracania wyniku."
+  },
+  "SUMIFS": {
+    "a": "( zakres-sumy, zakres-kryteriów1, kryteria1, [zakres-kryteriów2, kryteria2], ... )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do dodawania wszystkich liczb w wybranym zakresie komórek na podstawie wielu warunków i zwracania wyniku."
+  },
+  "SUMPRODUCT": {
+    "a": "( lista argumentów)",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania sumy iloczynu wybranego zakresu komórek lub wartości tablicy."
+  },
+  "SUMSQ": {
+    "a": "( lista argumentów )",
+    "d": "Funkcje matematyczne i trygonometryczne, używane do zwracania sumy kwadratów parametru."
+  },
+  "SUMX2MY2": {
+    "a": "( tablica-1, tablica-2 )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania sumy kwadratów różnic odpowiadających wartości w dwóch tablicach."
+  },
+  "SUMX2PY2": {
+    "a": "( tablica-1, tablica-2 )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania sumy kwadratów wartości w wybranej tablicy."
+  },
+  "SUMXMY2": {
+    "a": "( tablica-1, tablica-2 )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania sumy kwadratów odpowiednich elementów tablicy."
+  },
+  "TAN": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do zwracania stycznej kąta."
+  },
+  "TANH": {
+    "a": "( x )",
+    "d": "Funkcje matematyczne i trygonometryczne używane do zwracania tangensa hiperbolicznego liczby."
+  },
+  "TRUNC": {
+    "a": "( x [, liczba-cyfry] )",
+    "d": "Funkcje matematyczne i trygonometryczne służą do odcinania części dziesiętnej liczby i zwracania liczby całkowitej."
+  },
+  "ADDRESS": {
+    "a": "( numer-wiersza, numer-kolumny [, [typ-ref] [, [flaga-stylu-odniesienia-A1] [, nazwa-arkusza]]] )",
+    "d": "Funkcje wyszukiwania i odwoływania się, używane do zwracania reprezentacji tekstowej adresu komórki."
+  },
+  "CHOOSE": {
+    "a": "( indeks, lista-argumentów )",
+    "d": "Funkcje wyszukiwania i odwołań służą do zwracania wartości na liście wartości na podstawie określonego indeksu (pozycji)."
+  },
+  "COLUMN": {
+    "a": "( [ odniesienie ] )",
+    "d": "Funkcje wyszukiwania i odwoływania się, używane do zwracania numeru kolumny danej komórki."
+  },
+  "COLUMNS": {
+    "a": "( szyk )",
+    "d": "Funkcja Znajdź i odwołanie, używana do zwracania numeru kolumny, do której odwołuje się komórka."
+  },
+  "HLOOKUP": {
+    "a": "( wartość-wyszukiwania, tablica-tabeli, numer-indeksu-wiersza [, [flaga-wyszukiwania-zakresu]])",
+    "d": "Funkcje wyszukiwania i odwoływania się do wyszukiwania wartości w pierwszym wierszu tabeli lub tablicy liczbowej oraz zwracania wartości w kolumnie określonego wiersza tabeli lub tablicy."
+  },
+  "INDEX": {
+    "a": "( tablica, [numer-wiersza] [, [numer-kolumny]]) INDEKS (odwołanie, [numer-wiersza] [, [numer-kolumny] [, [numer-obszaru]]] )",
+    "d": "Funkcja Znajdź i odwołanie, używana do zwracania wartości w zakresie komórek zgodnie z określonym numerem wiersza lub numerem kolumny. Funkcja INDEKS ma dwie formy."
+  },
+  "INDIRECT": {
+    "a": "( ref-text [, [A1-ref-style-flag]] )",
+    "d": "Funkcje wyszukiwania i odwoływania się, używane do zwracania odwołań do komórek na podstawie ciągów tekstowych."
+  },
+  "LOOKUP": {
+    "a": "( wartość-wyszukiwania, wektor-wyszukiwania, wektor-wyniku  )",
+    "d": "Funkcje wyszukiwania i odwoływania się do zwracania wartości z wybranego zakresu komórek (wiersze lub kolumny zawierające dane w kolejności rosnącej)."
+  },
+  "MATCH": {
+    "a": "(  szukana-wartość, tablica-odnośnika [, [typ-dopasowania]] )",
+    "d": "Funkcje wyszukiwania i odwoływania się, używane do zwracania względnej pozycji określonego elementu w zakresie komórek."
+  },
+  "OFFSET": {
+    "a": "( odniesienie, wiersze, kolumny [, [wysokość] [, [szerokość]]] )",
+    "d": "Funkcja wyszukiwania i odwołania służy do zwracania odwołania do komórki przeniesionej z określonej komórki (lub komórki w lewym górnym rogu zakresu komórek) do określonej liczby wierszy i kolumn."
+  },
+  "ROW": {
+    "a": "( [ odniesienie ] )",
+    "d": "Funkcja Znajdź i odwołanie, używana do zwracania numeru wiersza komórki, do której się odwołuje."
+  },
+  "ROWS": {
+    "a": "( szyk )",
+    "d": "Funkcja Znajdź i odwołanie, używana do zwracania liczby wierszy komórek, do których się odwołuje."
+  },
+  "TRANSPOSE": {
+    "a": "( szyk )",
+    "d": "Funkcja wyszukiwania i odwoływania się, używana do zwracania pierwszego elementu tablicy."
+  },
+  "VLOOKUP": {
+    "a": "( wartość-wyszukiwania, tablica-tabeli, numer-indeksu-kolumny [, [flaga-wyszukiwania-zakresu]] )",
+    "d": "Funkcja wyszukiwania i odwołań służy do przeprowadzania wyszukiwania pionowego w skrajnej lewej kolumnie tabeli lub tablicy i zwracania wartości w tym samym wierszu zgodnie z określonym numerem indeksu kolumny."
+  },
+  "ERROR.TYPE": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do zwracania cyfrowej reprezentacji istniejącego błędu."
+  },
+  "ISBLANK": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do sprawdzania, czy komórka jest pusta. Jeśli komórka nie zawiera żadnej wartości, funkcja zwraca wartość PRAWDA, w przeciwnym razie funkcja zwraca wartość FAŁSZ."
+  },
+  "ISERR": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do sprawdzania wartości błędów. Jeśli komórka zawiera wartość błędu (z wyjątkiem # N / A), funkcja zwraca TRUE, w przeciwnym razie zwraca FALSE."
+  },
+  "ISERROR": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do sprawdzania wartości błędów. Jeśli komórka zawiera wartość błędu, taką jak # N / A, #VALUE !, #REF !, # DIV / 0 !, #NUM !, #NAME? Lub #NULL, funkcja zwraca wartość TRUE, w przeciwnym razie funkcja zwraca FALSE."
+  },
+  "ISEVEN": {
+    "a": "(numer)",
+    "d": "Funkcja informacyjna, używana do sprawdzania wartości błędów. Jeśli komórka zawiera parzystą wartość, funkcja zwraca PRAWDA. Jeśli wartość jest nieparzysta, funkcja zwraca FALSE。"
+  },
+  "ISLOGICAL": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do sprawdzania wartości logicznej (PRAWDA lub FAŁSZ). Jeśli komórka zawiera wartość logiczną, funkcja zwraca PRAWDA, w przeciwnym razie funkcja zwraca FAŁSZ."
+  },
+  "ISNA": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do sprawdzania błędu # N / A. Jeśli komórka zawiera wartość błędu # N / A, funkcja zwraca TRUE, w przeciwnym razie funkcja zwraca FALSE."
+  },
+  "ISNONTEXT": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do sprawdzania wartości nietekstowych. Jeśli komórka nie zawiera wartości tekstowej, funkcja zwraca wartość TRUE, w przeciwnym razie funkcja zwraca wartość FALSE."
+  },
+  "ISNUMBER": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do sprawdzania wartości. Jeśli komórka zawiera wartość, funkcja zwraca wartość TRUE, w przeciwnym razie funkcja zwraca wartość FALSE."
+  },
+  "ISODD": {
+    "a": "(numer)",
+    "d": "Funkcja informacyjna, używana do sprawdzania wartości nieparzystych. Jeśli komórka zawiera nieparzystą wartość, funkcja zwraca wartość PRAWDA. Jeśli wartość jest parzysta, funkcja zwraca FALSE。"
+  },
+  "ISREF": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do weryfikacji, czy wartość w komórce jest prawidłowym odwołaniem do komórki."
+  },
+  "ISTEXT": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do sprawdzania wartości tekstu. Jeśli komórka zawiera wartość tekstową, funkcja zwraca wartość TRUE, w przeciwnym razie funkcja zwraca wartość FALSE."
+  },
+  "N": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do zwracania wartości przekonwertowanej na wartość liczbową."
+  },
+  "NA": {
+    "a": "()",
+    "d": "Funkcja informacyjna, używana do zwracania wartości błędu # N / A. Ta funkcja nie wymaga parametrów."
+  },
+  "TYPE": {
+    "a": "(wartość)",
+    "d": "Funkcja informacyjna, używana do zwracania wyników lub wyświetlania typów wartości."
+  },
+  "AND": {
+    "a": "(logiczne1, logiczne2, ...)",
+    "d": "Funkcja logiczna, używana do sprawdzania, czy wejściowa wartość logiczna to PRAWDA czy FAŁSZ. Jeśli wszystkie parametry mają wartość TRUE, funkcja zwraca wartość TRUE."
+  },
+  "FALSE": {
+    "a": "()",
+    "d": "Funkcja logiczna. Służy do zwracania wartości logicznej FALSE. Żadne parametry nie są wymagane."
+  },
+  "IF": {
+    "a": "(est_logiczny, wartość_jeśli_prawda, wartość_jeśli_fałsz)",
+    "d": "Funkcja logiczna, używana do sprawdzania wyrażeń logicznych. Jeśli jest PRAWDA, zwraca wartość, jeśli jest FAŁSZ, zwraca inną wartość."
+  },
+  "IFERROR": {
+    "a": "(wartość, wartość_jeśli_błąd)",
+    "d": "Funkcja logiczna, używana do sprawdzenia, czy pierwszy parametr formuły zawiera błędy. Jeśli nie ma błędu, funkcja zwraca wynik formuły, a jeśli wystąpi błąd, zwraca określoną wartość."
+  },
+  "IFNA": {
+    "a": "(wartość, wartość_jeżeli_na)",
+    "d": "Funkcja logiczna, używana do sprawdzenia, czy pierwszy parametr formuły zawiera błędy. Jeśli formuła zwraca wartość błędu # N / A, funkcja zwraca określoną wartość, w przeciwnym razie zwraca wynik formuły."
+  },
+  "NOT": {
+    "a": "(logiczny)",
+    "d": "Funkcja logiczna, używana do sprawdzania, czy wejściowa wartość logiczna to PRAWDA czy FAŁSZ. Jeśli parametr ma wartość FALSE, funkcja zwraca wartość TRUE, a jeśli parametr ma wartość TRUE, funkcja zwraca FALSE."
+  },
+  "OR": {
+    "a": "(logiczne1, logiczne2, ...)",
+    "d": "Funkcja logiczna, używana do sprawdzania, czy wejściowa wartość logiczna to PRAWDA czy FAŁSZ. Jeśli wszystkie parametry mają wartość FALSE, funkcja zwraca FALSE."
+  },
+  "TRUE": {
+    "a": "()",
+    "d": "Funkcja logiczna, używana do zwracania wartości logicznej PRAWDA. Żadne parametry nie są wymagane."
+  },
+  "XOR": {
+    "a": "(logiczne1 [, logiczne2], ...)",
+    "d": "Funkcja logiczna, używana do zwracania logicznego wyłącznego LUB wszystkich parametrów."
+  }
+}
